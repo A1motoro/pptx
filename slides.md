@@ -137,21 +137,99 @@ layout: default
 -->
 
 ---
-layout: image-left
-image: https://images.unsplash.com/photo-1533158307581-c69414477803?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
+layout: default
 ---
 
 # The Evidence
-### A Personal Story
+### Have you ever experienced this?
 
-I realized I had fallen into the trap.
+<div class="flex items-center justify-center gap-8 mt-8">
+  
+  <div class="flex-1 text-center relative">
+    <div class="text-4xl mb-2 opacity-30">1</div>
+    <div class="font-bold text-lg mb-2 opacity-30">The Trigger</div>
+    <div class="text-sm opacity-30">
+      A controversial post triggers<br>strong emotions
+    </div>
+    <div v-click="1" class="absolute inset-0 flex flex-col items-center justify-start">
+      <div class="text-4xl mb-2 opacity-100 transition-opacity">1</div>
+      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">The Trigger</div>
+      <div class="text-sm opacity-100 transition-opacity">
+        A controversial post triggers<br>strong emotions
+      </div>
+    </div>
+  </div>
 
-*   **The Moment:** A controversial post triggered strong emotions.
-*   **The Reaction:** I immediately posted a passionate response.
-*   **The Result:** My impulsive reaction became public data—feeding the algorithm.
+  <div class="flex-1 text-center relative">
+    <div class="text-4xl mb-2 opacity-30">2</div>
+    <div class="font-bold text-lg mb-2 opacity-30">The Reaction</div>
+    <div class="text-sm opacity-30">
+      You immediately post<br>a passionate response
+    </div>
+    <div v-click="2" class="absolute inset-0 flex flex-col items-center justify-start">
+      <div class="text-4xl mb-2 opacity-100 transition-opacity">2</div>
+      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">The Reaction</div>
+      <div class="text-sm opacity-100 transition-opacity">
+        You immediately post<br>a passionate response
+      </div>
+    </div>
+  </div>
 
-<div v-click class="p-4 bg-black/5 rounded text-gray-700 dark:text-gray-300 italic border-l-4 border-gray-500 mt-4">
-  "I thought I was expressing my authentic self. But I was just giving the algorithm more impulse data. Two days later, I realized I didn't need to post that at all—but it was too late."
+  <div class="flex-1 text-center relative">
+    <div class="text-4xl mb-2 opacity-30">3</div>
+    <div class="font-bold text-lg mb-2 opacity-30">The Result</div>
+    <div class="text-sm opacity-30">
+      Your impulsive reaction<br>becomes public data
+    </div>
+    <div v-click="3" class="absolute inset-0 flex flex-col items-center justify-start">
+      <div class="text-4xl mb-2 opacity-100 transition-opacity">3</div>
+      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">The Result</div>
+      <div class="text-sm opacity-100 transition-opacity">
+        Your impulsive reaction<br>becomes public data
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="flex items-center justify-center gap-8 mt-6 relative h-6">
+  <div class="absolute flex items-center justify-center gap-8 w-full">
+    <div class="flex-1 flex justify-center">
+      <div class="w-5 h-5 rounded-full bg-blue-500 transition-all"></div>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
+    </div>
+  </div>
+  <div v-click="2" class="absolute flex items-center justify-center gap-8 w-full">
+    <div class="flex-1 flex justify-center">
+      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <div class="w-5 h-5 rounded-full bg-blue-500 transition-all"></div>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
+    </div>
+  </div>
+  <div v-click="3" class="absolute flex items-center justify-center gap-8 w-full">
+    <div class="flex-1 flex justify-center">
+      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <div class="w-5 h-5 rounded-full bg-blue-500 transition-all"></div>
+    </div>
+  </div>
+</div>
+
+<div v-click="4" class="p-4 bg-black/5 rounded text-gray-700 dark:text-gray-300 italic border-l-4 border-gray-500 mt-8 text-center">
+  "Two days later, you realize you didn't need to post that at all—but it's too late."
 </div>
 
 <!-- note
@@ -176,14 +254,31 @@ Bryce offers a rule from her mother to break the trap.
   </div>
 </div>
 
-<div class="grid grid-cols-2 gap-4 text-center">
-  <div v-click>
-    <h4 class="font-bold">Step 1: Experience</h4>
-    <p class="text-sm opacity-70">Be present in private.</p>
+<div class="flex items-center justify-center mt-8 relative h-32">
+  <div class="flex items-center justify-center gap-8 absolute inset-0 transition-all duration-500">
+    <div class="flex-1 text-center">
+      <h4 class="font-bold text-xl mb-2">Step 1: Experience</h4>
+      <p class="text-sm opacity-70">Be present in private.</p>
+    </div>
+    <div class="flex-shrink-0 w-32 text-center"></div>
+    <div class="flex-1 text-center">
+      <h4 class="font-bold text-xl mb-2">Step 2: Exhibition</h4>
+      <p class="text-sm opacity-70">Calculate the public position later.</p>
+    </div>
   </div>
-  <div v-click>
-    <h4 class="font-bold">Step 2: Exhibition</h4>
-    <p class="text-sm opacity-70">Calculate the public position later.</p>
+  <div v-click class="flex items-center justify-center gap-8 absolute inset-0 transition-all duration-500">
+    <div class="flex-1 text-center">
+      <h4 class="font-bold text-xl mb-2">Step 1: Experience</h4>
+      <p class="text-sm opacity-70">Be present in private.</p>
+    </div>
+    <div class="flex-shrink-0 w-32 text-center">
+      <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">Buffer</div>
+      <div class="text-xs opacity-80">48 hours<br>of reflection</div>
+    </div>
+    <div class="flex-1 text-center">
+      <h4 class="font-bold text-xl mb-2">Step 2: Exhibition</h4>
+      <p class="text-sm opacity-70">Calculate the public position later.</p>
+    </div>
   </div>
 </div>
 
