@@ -146,21 +146,20 @@ image: https://images.unsplash.com/photo-1533158307581-c69414477803?ixlib=rb-1.2
 
 I realized I had fallen into the trap.
 
-*   **The Moment:** I opened an app "just to check" something quickly.
-*   **The Reaction:** An hour later, I had purchased three items I never planned to buy.
-*   **The Result:** The algorithm knew my *hidden desires* better than I did—and exploited them.
+*   **The Moment:** A controversial post triggered strong emotions.
+*   **The Reaction:** I immediately posted a passionate response.
+*   **The Result:** My impulsive reaction became public data—feeding the algorithm.
 
-<br>
-
-<div v-click class="p-4 bg-black/5 rounded text-gray-700 dark:text-gray-300 italic border-l-4 border-gray-500">
-  "I thought I was making choices. But the algorithm had already predicted what I would want—before I even knew I wanted it. My 'free will' was an illusion."
+<div v-click class="p-4 bg-black/5 rounded text-gray-700 dark:text-gray-300 italic border-l-4 border-gray-500 mt-4">
+  "I thought I was expressing my authentic self. But I was just giving the algorithm more impulse data. Two days later, I realized I didn't need to post that at all—but it was too late."
 </div>
 
 <!-- note
 中文提示：
 1. 个人故事作为"证据"。
-2. 故事：算法推荐的商品，我发现自己确实想要，但之前没意识到。
-3. 分析：算法通过行为侧写，比我更了解我的隐藏欲望。我的"自由选择"其实是算法预测的结果。
+2. 故事：看到争议内容，立即冲动发帖回应。
+3. 分析：我的冲动反应成了公开数据，被算法利用。48小时后发现其实不需要发，但已经晚了。
+4. 这个例子完美契合48小时反叛：如果等待48小时，就不会冲动发帖。
 -->
 
 ---
