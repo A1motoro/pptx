@@ -50,7 +50,11 @@ jobs:
             BASE_PATH="/${REPO_NAME}/"
           fi
           echo "Building with base path: $BASE_PATH"
-          pnpm run build -- --base "$BASE_PATH"
+          echo "Repository name: $REPO_NAME"
+          echo "Owner: $OWNER"
+          # 使用环境变量和命令行参数双重设置
+          export BASE_PATH="$BASE_PATH"
+          pnpm run build --base "$BASE_PATH"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
