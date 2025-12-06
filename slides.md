@@ -17,7 +17,7 @@ css: unocss
 ## Finding Agency in the Age of Algorithms
 
 <div class="abs-br m-6 text-xl opacity-50">
-  A Reaction Presentation
+  Yu Jia 125090877
 </div>
 
 <!-- note
@@ -367,3 +367,22 @@ class: text-center
 1. 总结金句：私人生活赋予公共生活价值。
 2. 呼吁：隐私没死，但需要努力。别等法律，今天就开始反叛。
 -->
+
+---
+layout: center
+class: text-center
+---
+
+<div class="relative">
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-96 h-96 border-4 border-blue-200 dark:border-blue-800 rounded-full opacity-20"></div>
+  </div>
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-64 h-64 border-2 border-purple-200 dark:border-purple-800 rounded-full opacity-30"></div>
+  </div>
+  <div class="relative z-10">
+    <h1 class="text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      Q&A Session
+    </h1>
+  </div>
+</div>
