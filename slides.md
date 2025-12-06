@@ -29,7 +29,7 @@ css: unocss
 
 ---
 layout: image-right
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Bryce_Dallas_Howard_2011.jpg/800px-Bryce_Dallas_Howard_2011.jpg
+image: /Bryce.png
 class: my-auto
 ---
 
