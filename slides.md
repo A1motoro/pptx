@@ -23,8 +23,7 @@ css: unocss
 <!-- note
 中文提示：
 开场定调。
-今天的话题是关于如何在算法时代夺回生活的主导权。
-核心概念是“48小时反叛”。
+抛弃了复杂的理论，我们今天只谈一个核心：如何在算法时代通过一个简单的法则夺回主导权。
 -->
 
 ---
@@ -37,7 +36,7 @@ class: my-auto
 ### The Authority of Experience
 
 **Bryce Dallas Howard**
-<div class="opacity-80 text-sm mb-4">Actress / Director / Star of <i>Black Mirror</i>'s "Nosegive"</div>
+<div class="opacity-80 text-sm mb-4">Actress / Director / Star of <i>Black Mirror</i>'s "Nosedive"</div>
 
 *   **3rd Generation Entertainer**
     *   Daughter of Ron Howard.
@@ -51,9 +50,8 @@ class: my-auto
 
 <!-- note
 中文提示：
-1. 介绍 Bryce Dallas Howard（黑镜女主，Ron Howard女儿）。
-2. 强调权威性：她家族三代都在聚光灯下，有70年的经验。
-3. 她拥有我们在“社会实验”中缺失的“生存蓝图”。
+1. 介绍权威：Bryce Dallas Howard。
+2. 重点：她家族三代都在聚光灯下，对于“公开生活”的压力，她比任何人都懂。
 -->
 
 ---
@@ -91,49 +89,49 @@ layout: default
 
 <!-- note
 中文提示：
-1. 从《黑镜》切入：虽然没那么极端，但我们进入了新时代。
-2. 现状：这是一个巨大的社会实验。每个人都有全球观众，但没有任何指导手册。
+1. 背景：我们正处在一个巨大的社会实验中。
+2. 痛点：每个人都有观众，但没人教我们怎么应对。
 -->
 
 ---
 
 # The Trap
-### Why is this dangerous?
+### Why do we feel anxious?
 
-<div class="text-sm mb-4 opacity-60">Reference: <i>Tehilla Shwartz Altshuler</i></div>
+<div class="text-sm mb-4 opacity-60">We are fighting human nature against supercomputers.</div>
 
 <div class="grid grid-cols-2 gap-6">
 
 <div class="border border-gray-300 p-5 rounded-lg shadow-sm hover:shadow-md transition">
-  <div class="text-4xl mb-2">🎣</div>
-  <div class="font-bold text-lg mb-1">The Privacy Paradox</div>
+  <div class="text-4xl mb-2">🍭</div>
+  <div class="font-bold text-lg mb-1">The Validation Loop</div>
   <div class="text-sm opacity-80">
-    We claim to value privacy, yet we trade our data for convenience ("free pizza").
+    We crave instant connection.
+    <br>When something happens, our first instinct is: <b>"I must share this now."</b>
   </div>
 </div>
 
 <div class="border border-gray-300 p-5 rounded-lg shadow-sm hover:shadow-md transition bg-red-50 dark:bg-red-900/20 border-red-200">
-  <div class="text-4xl mb-2">🕸️</div>
-  <div class="font-bold text-lg mb-1 text-red-700 dark:text-red-400">The Autonomy Trap</div>
+  <div class="text-4xl mb-2">⚡</div>
+  <div class="font-bold text-lg mb-1 text-red-700 dark:text-red-400">The Urgency Trap</div>
   <div class="text-sm opacity-80">
-    Algorithms use <b>Behavioral Profiling</b> to exploit our insecurities.
-    <br><br>
-    They thrive on <span class="font-bold underline">Impulse</span>.
+    Algorithms thrive on <b>Impulse</b>.
+    <br>They want our raw, unfiltered emotions because that drives engagement.
   </div>
 </div>
 
 </div>
 
-<div v-click class="mt-6 text-center font-serif text-3xl italic">
-  When algorithms know us better than we know ourselves,<br> we lose our free will.
+<div v-click class="mt-6 text-center font-serif text-2xl italic">
+  "We are trading our private moments for public metrics."
 </div>
 
 <!-- note
 中文提示：
-1. 引用参考文档：解释危险性。
-2. 左：隐私悖论（嘴上说不要，身体很诚实）。
-3. 右：自主陷阱（核心概念）。算法通过“行为侧写”利用我们的冲动。
-4. 结论：我们失去了自由意志。
+逻辑修正：这里不再引用Reference，而是讲心理机制。
+1. 验证循环：我们要即时反馈。
+2. 紧急陷阱：算法想要我们的“冲动”。
+这就是我们失去主导权的原因。
 -->
 
 ---
@@ -141,103 +139,90 @@ layout: default
 ---
 
 # The Evidence
-### Have you ever experienced this?
+### The Cycle of Regret
 
 <div class="flex items-center justify-center gap-8 mt-8">
   
   <div class="flex-1 text-center relative">
     <div class="text-4xl mb-2 opacity-30">1</div>
-    <div class="font-bold text-lg mb-2 opacity-30">The Trigger</div>
+    <div class="font-bold text-lg mb-2 opacity-30">Trigger</div>
     <div class="text-sm opacity-30">
-      A controversial post triggers<br>strong emotions
+      Strong Emotion<br>(Anger / Joy)
     </div>
     <div v-click="1" class="absolute inset-0 flex flex-col items-center justify-start">
-      <div class="text-4xl mb-2 opacity-100 transition-opacity">1</div>
-      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">The Trigger</div>
+      <div class="text-4xl mb-2 opacity-100 text-blue-600 transition-opacity">1</div>
+      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">Trigger</div>
       <div class="text-sm opacity-100 transition-opacity">
-        A controversial post triggers<br>strong emotions
+        Strong Emotion<br>(Anger / Joy)
       </div>
     </div>
   </div>
 
   <div class="flex-1 text-center relative">
     <div class="text-4xl mb-2 opacity-30">2</div>
-    <div class="font-bold text-lg mb-2 opacity-30">The Reaction</div>
+    <div class="font-bold text-lg mb-2 opacity-30">Reaction</div>
     <div class="text-sm opacity-30">
-      You immediately post<br>a passionate response
+      Instant Post<br>"Sent"
     </div>
     <div v-click="2" class="absolute inset-0 flex flex-col items-center justify-start">
-      <div class="text-4xl mb-2 opacity-100 transition-opacity">2</div>
-      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">The Reaction</div>
+      <div class="text-4xl mb-2 opacity-100 text-red-600 transition-opacity">2</div>
+      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">Reaction</div>
       <div class="text-sm opacity-100 transition-opacity">
-        You immediately post<br>a passionate response
+        Instant Post<br>"Sent"
       </div>
     </div>
   </div>
 
   <div class="flex-1 text-center relative">
     <div class="text-4xl mb-2 opacity-30">3</div>
-    <div class="font-bold text-lg mb-2 opacity-30">The Result</div>
+    <div class="font-bold text-lg mb-2 opacity-30">Regret</div>
     <div class="text-sm opacity-30">
-      Your impulsive reaction<br>becomes public data
+      "Did I really need<br>to share that?"
     </div>
     <div v-click="3" class="absolute inset-0 flex flex-col items-center justify-start">
-      <div class="text-4xl mb-2 opacity-100 transition-opacity">3</div>
-      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">The Result</div>
+      <div class="text-4xl mb-2 opacity-100 text-gray-600 transition-opacity">3</div>
+      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">Regret</div>
       <div class="text-sm opacity-100 transition-opacity">
-        Your impulsive reaction<br>becomes public data
+        "Did I really need<br>to share that?"
       </div>
     </div>
   </div>
 
 </div>
 
+<!-- Timeline Dots Animation -->
 <div class="flex items-center justify-center gap-8 mt-6 relative h-6">
-  <div class="absolute flex items-center justify-center gap-8 w-full">
-    <div class="flex-1 flex justify-center">
-      <div class="w-5 h-5 rounded-full bg-blue-500 transition-all"></div>
-    </div>
-    <div class="flex-1 flex justify-center">
-      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
-    </div>
-    <div class="flex-1 flex justify-center">
-      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
-    </div>
+  <!-- State 1 -->
+  <div class="absolute flex items-center justify-center gap-8 w-full opacity-30">
+    <div class="w-20 h-1 bg-gray-300 rounded"></div>
+    <div class="w-20 h-1 bg-gray-300 rounded"></div>
   </div>
+  
+  <div v-click="1" class="absolute flex items-center justify-center gap-8 w-full">
+     <div class="w-20 h-1 bg-blue-500 rounded shadow-lg shadow-blue-500/50"></div>
+     <div class="w-20 h-1 bg-gray-300 rounded"></div>
+  </div>
+  
   <div v-click="2" class="absolute flex items-center justify-center gap-8 w-full">
-    <div class="flex-1 flex justify-center">
-      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
-    </div>
-    <div class="flex-1 flex justify-center">
-      <div class="w-5 h-5 rounded-full bg-blue-500 transition-all"></div>
-    </div>
-    <div class="flex-1 flex justify-center">
-      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
-    </div>
+     <div class="w-20 h-1 bg-blue-500 rounded"></div>
+     <div class="w-20 h-1 bg-red-500 rounded shadow-lg shadow-red-500/50"></div>
   </div>
-  <div v-click="3" class="absolute flex items-center justify-center gap-8 w-full">
-    <div class="flex-1 flex justify-center">
-      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
-    </div>
-    <div class="flex-1 flex justify-center">
-      <div class="w-5 h-5 rounded-full bg-gray-300 transition-all"></div>
-    </div>
-    <div class="flex-1 flex justify-center">
-      <div class="w-5 h-5 rounded-full bg-blue-500 transition-all"></div>
-    </div>
+
+   <div v-click="3" class="absolute flex items-center justify-center gap-8 w-full">
+     <div class="w-20 h-1 bg-gray-400 rounded"></div>
+     <div class="w-20 h-1 bg-gray-400 rounded"></div>
   </div>
 </div>
 
 <div v-click="4" class="p-4 bg-black/5 rounded text-gray-700 dark:text-gray-300 italic border-l-4 border-gray-500 mt-8 text-center">
-  "Two days later, you realize you didn't need to post that at all—but it's too late."
+  "Once it's public, it's data. You can delete the post, but you can't undo the exposure."
 </div>
 
 <!-- note
 中文提示：
-1. 个人故事作为"证据"。
-2. 故事：看到争议内容，立即冲动发帖回应。
-3. 分析：我的冲动反应成了公开数据，被算法利用。48小时后发现其实不需要发，但已经晚了。
-4. 这个例子完美契合48小时反叛：如果等待48小时，就不会冲动发帖。
+1. 个人体验：触发 -> 反应 -> 后悔。
+2. 痛点：因为没有等待，我们把一时的情绪变成了永久的公开数据。
+3. 这里的动画展示了“不可逆”的过程。
 -->
 
 ---
@@ -245,7 +230,7 @@ layout: default
 # The Solution
 ### The "Cheryl Method"
 
-Bryce offers a rule from her mother to break the trap.
+Bryce offers a rule from her mother to break this cycle.
 
 <div class="flex justify-center items-center my-10">
   <div class="relative p-8 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-2xl transform hover:scale-105 transition duration-500">
@@ -266,42 +251,35 @@ Bryce offers a rule from her mother to break the trap.
       <p class="text-sm opacity-70">Calculate the public position later.</p>
     </div>
   </div>
-  <div v-click class="flex items-center justify-center gap-8 absolute inset-0 transition-all duration-500">
-    <div class="flex-1 text-center">
-      <h4 class="font-bold text-xl mb-2">Step 1: Experience</h4>
-      <p class="text-sm opacity-70">Be present in private.</p>
-    </div>
-    <div class="flex-shrink-0 w-32 text-center">
-      <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">Buffer</div>
-      <div class="text-xs opacity-80">48 hours<br>of reflection</div>
-    </div>
-    <div class="flex-1 text-center">
-      <h4 class="font-bold text-xl mb-2">Step 2: Exhibition</h4>
-      <p class="text-sm opacity-70">Calculate the public position later.</p>
-    </div>
+  
+  <div v-click class="flex items-center justify-center gap-8 absolute inset-0 transition-all duration-500 bg-white/90 dark:bg-black/90 backdrop-blur-sm z-10">
+     <div class="text-center">
+        <div class="text-4xl mb-2">⏸️</div>
+        <div class="text-2xl font-bold text-blue-600">The Magic Pause</div>
+        <div class="text-sm opacity-70">Turning "Reaction" into "Reflection"</div>
+     </div>
   </div>
 </div>
 
 <!-- note
 中文提示：
-1. 提出解法：Bryce母亲的“48小时法则”。
-2. 核心：不管发生什么，等两天再发。
-3. 逻辑：先私下“体验”，再公开“展示”。
+1. 解法：48小时法则。
+2. 重点：在“体验”和“展示”之间插入一个巨大的暂停键。
 -->
 
 ---
 
 # Why It Works
-### Synthesizing Theory & Practice
+### My Reaction & Takeaway
 
 How a simple rule defeats the Complex System.
 
 <div class="grid grid-cols-3 gap-2 mt-8 items-center">
 
   <div class="text-center p-4 border rounded bg-red-50 dark:bg-red-900/10">
-    <div class="font-bold text-red-600">The Trap</div>
-    <div class="text-xs mt-2">Feeds on <b>Impulse Data</b></div>
-    <div class="text-xs">(Stimulus <carbon-arrow-right /> Response)</div>
+    <div class="font-bold text-red-600">The Algorithm</div>
+    <div class="text-xs mt-2">Feeds on <b>Impulse</b></div>
+    <div class="text-xs">(Stimulus <carbon-arrow-right /> Reaction)</div>
   </div>
 
   <div class="text-center text-2xl text-gray-400">
@@ -309,27 +287,30 @@ How a simple rule defeats the Complex System.
   </div>
 
   <div class="text-center p-4 border rounded bg-green-50 dark:bg-green-900/10">
-    <div class="font-bold text-green-600">The Delay</div>
-    <div class="text-xs mt-2">Creates <b>Reflected Choice</b></div>
-    <div class="text-xs">(Stimulus <span class="text-blue-500">|| Pause ||</span> Response)</div>
+    <div class="font-bold text-green-600">The 48h Rule</div>
+    <div class="text-xs mt-2">Creates <b>Autonomy</b></div>
+    <div class="text-xs">(Stimulus <span class="text-blue-500">|| Pause ||</span> Choice)</div>
   </div>
 
 </div>
 
 <br>
 
-<div v-click class="mt-4">
-  <ul class="list-none pl-0 text-center">
-    <li class="mb-2">✅ <b>Stops Behavioral Profiling:</b> You withhold your raw reactions.</li>
-    <li class="mb-2">✅ <b>Restores Agency:</b> You shift from <i>Reactor</i> to <i>Editor</i>.</li>
-  </ul>
+<div v-click class="mt-4 text-center">
+  <div class="mb-2"><b>Starve the Machine:</b> You withhold the raw data it craves.</div>
+  <div class="mb-2"><b>Protect the Self:</b> You ensure your public self is mature.</div>
+</div>
+
+<div v-click class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-blue-500 rounded-r text-center italic text-lg text-gray-700 dark:text-gray-300">
+  "The Algorithm is a beast that eats our Impulse. <br>If we don't feed it immediately, we regain control."
 </div>
 
 <!-- note
 中文提示：
-1. 理论升华：为什么有效？
-2. 图示：从“陷阱（捕捉冲动）”到“延迟（理性选择）”。
-3. 核心：延迟消除了“冲动数据”，让算法无法精准侧写。你从被动反应者变主动编辑者。
+1. 原理总结：饿死算法，夺回控制。
+2. 左边：算法吃“冲动”。
+3. 右边：延迟创造“自主”。
+4. 结论：这是我们作为普通人能做的最有效的反叛。
 -->
 
 ---
@@ -364,8 +345,8 @@ class: text-center
 
 <!-- note
 中文提示：
-1. 总结金句：私人生活赋予公共生活价值。
-2. 呼吁：隐私没死，但需要努力。别等法律，今天就开始反叛。
+1. 总结：引用金句。
+2. 呼吁行动：别等法律，现在就开始。
 -->
 
 ---
