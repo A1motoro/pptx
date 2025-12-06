@@ -48,6 +48,10 @@ class: my-auto
   She isn't guessing. She possesses a <span class="text-red-600 font-bold">Blueprint</span> for survival that we desperately need.
 </div>
 
+<div class="mt-4 text-xs opacity-50 text-left">
+  Resource: www.ted.com
+</div>
+
 <!-- note
 中文提示：
 1. 介绍权威：Bryce Dallas Howard。
