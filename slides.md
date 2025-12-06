@@ -145,90 +145,74 @@ layout: default
 # The Evidence
 ### The Cycle of Regret
 
-<div class="flex items-center justify-center gap-8 mt-8">
+<div class="w-full max-w-3xl mx-auto mt-24">
   
-  <div class="flex-1 text-center relative">
-    <div class="text-4xl mb-2 opacity-30">1</div>
-    <div class="font-bold text-lg mb-2 opacity-30">Trigger</div>
-    <div class="text-sm opacity-30">
-      Strong Emotion<br>(Anger / Joy)
-    </div>
-    <div v-click="1" class="absolute inset-0 flex flex-col items-center justify-start">
-      <div class="text-4xl mb-2 opacity-100 text-blue-600 transition-opacity">1</div>
-      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">Trigger</div>
-      <div class="text-sm opacity-100 transition-opacity">
-        Strong Emotion<br>(Anger / Joy)
-      </div>
-    </div>
-  </div>
+  <!-- Timeline Container -->
+  <div class="relative flex justify-between items-center">
+    
+    <!-- Background Line (Gray) -->
+    <div class="absolute left-0 top-1/2 w-full h-1 bg-gray-200 dark:bg-gray-700 -z-10 rounded"></div>
 
-  <div class="flex-1 text-center relative">
-    <div class="text-4xl mb-2 opacity-30">2</div>
-    <div class="font-bold text-lg mb-2 opacity-30">Reaction</div>
-    <div class="text-sm opacity-30">
-      Instant Post<br>"Sent"
+    <!-- Node 1: Trigger -->
+    <div class="relative">
+        <!-- Inactive State (Small Gray Dot) -->
+        <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
+        
+        <!-- Active State (Blue Dot + Text) -->
+        <div v-click="1" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+             <!-- Active Dot -->
+             <div class="w-6 h-6 rounded-full bg-blue-600 shadow-lg transition-all mb-4"></div>
+             <!-- Text -->
+             <div class="w-32 text-center absolute top-8">
+                <div class="font-bold text-lg">Trigger</div>
+                <div class="text-xs opacity-60">Strong Emotion</div>
+             </div>
+        </div>
     </div>
-    <div v-click="2" class="absolute inset-0 flex flex-col items-center justify-start">
-      <div class="text-4xl mb-2 opacity-100 text-red-600 transition-opacity">2</div>
-      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">Reaction</div>
-      <div class="text-sm opacity-100 transition-opacity">
-        Instant Post<br>"Sent"
-      </div>
-    </div>
-  </div>
 
-  <div class="flex-1 text-center relative">
-    <div class="text-4xl mb-2 opacity-30">3</div>
-    <div class="font-bold text-lg mb-2 opacity-30">Regret</div>
-    <div class="text-sm opacity-30">
-      "Did I really need<br>to share that?"
+    <!-- Node 2: Reaction -->
+    <div class="relative">
+        <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
+        
+        <div v-click="2" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+             <div class="w-6 h-6 rounded-full bg-blue-600 shadow-lg transition-all mb-4"></div>
+             <div class="w-32 text-center absolute top-8">
+                <div class="font-bold text-lg">Reaction</div>
+                <div class="text-xs opacity-60">Instant Post</div>
+             </div>
+        </div>
     </div>
-    <div v-click="3" class="absolute inset-0 flex flex-col items-center justify-start">
-      <div class="text-4xl mb-2 opacity-100 text-gray-600 transition-opacity">3</div>
-      <div class="font-bold text-lg mb-2 opacity-100 transition-opacity">Regret</div>
-      <div class="text-sm opacity-100 transition-opacity">
-        "Did I really need<br>to share that?"
-      </div>
+
+    <!-- Node 3: Result -->
+    <div class="relative">
+        <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
+        
+        <div v-click="3" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+             <div class="w-6 h-6 rounded-full bg-blue-600 shadow-lg transition-all mb-4"></div>
+             <div class="w-32 text-center absolute top-8">
+                <div class="font-bold text-lg">Result</div>
+                <div class="text-xs opacity-60">Public Data</div>
+             </div>
+        </div>
     </div>
+
   </div>
 
 </div>
 
-<!-- Timeline Dots Animation -->
-<div class="flex items-center justify-center gap-8 mt-6 relative h-6">
-  <!-- State 1 -->
-  <div class="absolute flex items-center justify-center gap-8 w-full opacity-30">
-    <div class="w-20 h-1 bg-gray-300 rounded"></div>
-    <div class="w-20 h-1 bg-gray-300 rounded"></div>
-  </div>
-  
-  <div v-click="1" class="absolute flex items-center justify-center gap-8 w-full">
-     <div class="w-20 h-1 bg-blue-500 rounded shadow-lg shadow-blue-500/50"></div>
-     <div class="w-20 h-1 bg-gray-300 rounded"></div>
-  </div>
-  
-  <div v-click="2" class="absolute flex items-center justify-center gap-8 w-full">
-     <div class="w-20 h-1 bg-blue-500 rounded"></div>
-     <div class="w-20 h-1 bg-red-500 rounded shadow-lg shadow-red-500/50"></div>
-  </div>
-
-   <div v-click="3" class="absolute flex items-center justify-center gap-8 w-full">
-     <div class="w-20 h-1 bg-gray-400 rounded"></div>
-     <div class="w-20 h-1 bg-gray-400 rounded"></div>
-  </div>
-</div>
-
-<div v-click="4" class="p-4 bg-black/5 rounded text-gray-700 dark:text-gray-300 italic border-l-4 border-gray-500 mt-8 text-center">
-  "Once it's public, it's data. You can delete the post, but you can't undo the exposure."
+<div v-click="4" class="mt-32 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-gray-500 rounded text-center italic opacity-80">
+  "Without a pause, your temporary emotion becomes permanent data."
 </div>
 
 <!-- note
 中文提示：
-1. 个人体验：触发 -> 反应 -> 后悔。
-2. 痛点：因为没有等待，我们把一时的情绪变成了永久的公开数据。
-3. 这里的动画展示了“不可逆”的过程。
+1. 极简时间轴：灰线串联三个点。
+2. 动画逻辑：
+   - Click 1: 点亮"Trigger" (触发)。
+   - Click 2: 点亮"Reaction" (反应)。
+   - Click 3: 点亮"Result" (结果)。
+3. 视觉：没有任何花哨的颜色变化，只有“未发生(灰)”和“发生(蓝)”，非常清晰。
 -->
-
 ---
 
 # The Solution
