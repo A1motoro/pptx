@@ -186,8 +186,9 @@ layout: default
       <!-- Chart area -->
       <div class="ml-12 h-full flex items-end justify-between gap-2">
         <!-- Bar 1: 0h -->
-        <div class="flex-1 flex flex-col items-center">
-          <div class="w-full bg-red-500 rounded-t transition-all duration-1000" style="height: 95%"></div>
+        <div class="flex-1 flex flex-col items-center relative">
+          <div class="w-full bg-red-500 rounded-t transition-all duration-1000 opacity-0" style="height: 0%"></div>
+          <div v-click="4" class="absolute bottom-0 left-0 right-0 w-full bg-red-500 rounded-t transition-all duration-1000" style="height: 95%"></div>
           <div class="text-xs mt-2 font-bold">0h</div>
           <div class="text-xs opacity-70">95%</div>
         </div>
