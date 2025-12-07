@@ -145,10 +145,10 @@ layout: default
 # The Evidence
 ### The Cycle of Regret
 
-<div class="w-full max-w-3xl mx-auto mt-12">
+<div class="w-full max-w-3xl mx-auto mt-8">
 
 <!-- Timeline Container -->
-<div class="relative flex justify-between items-start pt-8 pb-16">
+<div class="relative flex justify-between items-start pt-8 pb-8">
 
 <!-- Background Line (Gray) -->
 <div class="absolute left-0 top-11 w-full h-1 bg-gray-200 dark:bg-gray-700 rounded"></div>
@@ -160,9 +160,42 @@ layout: default
 
 </div>
 
+<!-- Detailed Explanations -->
+<div class="grid grid-cols-3 gap-4 mt-8 text-sm">
+  <div v-click="1" class="p-4 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 rounded-lg">
+    <div class="font-bold text-red-600 mb-2">😡 阶段一：触发</div>
+    <ul class="list-disc list-inside space-y-1 opacity-80">
+      <li>突发事件引发强烈情绪</li>
+      <li>愤怒、兴奋、悲伤瞬间涌现</li>
+      <li>大脑进入"战或逃"模式</li>
+      <li>理性思考被情绪劫持</li>
+    </ul>
+  </div>
+
+  <div v-click="2" class="p-4 bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-800 rounded-lg">
+    <div class="font-bold text-orange-600 mb-2">⚡ 阶段二：反应</div>
+    <ul class="list-disc list-inside space-y-1 opacity-80">
+      <li>立即打开社交媒体应用</li>
+      <li>冲动性地发布内容</li>
+      <li>没有经过深思熟虑</li>
+      <li>寻求即时的认同和反馈</li>
+    </ul>
+  </div>
+
+  <div v-click="3" class="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg">
+    <div class="font-bold text-gray-600 dark:text-gray-400 mb-2">💾 阶段三：后果</div>
+    <ul class="list-disc list-inside space-y-1 opacity-80">
+      <li>内容成为永久的数字记录</li>
+      <li>无法完全删除或撤回</li>
+      <li>被算法永久存档和分析</li>
+      <li>可能在未来引发后悔</li>
+    </ul>
+  </div>
 </div>
 
-<div v-click="4" class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-gray-500 rounded text-center italic opacity-80">
+</div>
+
+<div v-click="4" class="mt-6 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-gray-500 rounded text-center italic opacity-80">
   "Without a pause, your temporary emotion becomes permanent data."
 </div>
 
