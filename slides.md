@@ -145,54 +145,51 @@ layout: default
 # The Evidence
 ### The Cycle of Regret
 
-<div class="w-full max-w-3xl mx-auto mt-24">
+<div class="w-full max-w-3xl mx-auto mt-12">
   
   <!-- Timeline Container -->
-  <div class="relative flex justify-between items-center">
+  <div class="relative flex justify-between items-start pt-8 pb-16">
     
     <!-- Background Line (Gray) -->
-    <div class="absolute left-0 top-1/2 w-full h-1 bg-gray-200 dark:bg-gray-700 -z-10 rounded"></div>
+    <div class="absolute left-0 top-11 w-full h-1 bg-gray-200 dark:bg-gray-700 rounded"></div>
 
     <!-- Node 1: Trigger -->
-    <div class="relative">
-        <!-- Inactive State (Small Gray Dot) -->
-        <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
-        
-        <!-- Active State (Blue Dot + Text) -->
-        <div v-click="1" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-             <!-- Active Dot -->
-             <div class="w-6 h-6 rounded-full bg-blue-600 shadow-lg transition-all mb-4"></div>
-             <!-- Text -->
-             <div class="w-32 text-center absolute top-8">
-                <div class="font-bold text-lg">Trigger</div>
-                <div class="text-xs opacity-60">Strong Emotion</div>
-             </div>
+    <div class="flex flex-col items-center w-32">
+        <!-- Dot Container -->
+        <div class="relative w-6 h-6">
+            <!-- Inactive State (Gray Dot) - hidden on click -->
+            <div v-click-hide="1" class="absolute inset-0 w-6 h-6 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
+            <!-- Active State (Blue Dot) - shown on click -->
+            <div v-click="1" class="absolute inset-0 w-6 h-6 rounded-full bg-blue-600 shadow-lg ring-4 ring-white dark:ring-[#121212]"></div>
+        </div>
+        <!-- Text - shown on click -->
+        <div v-click="1" class="mt-4 text-center">
+            <div class="font-bold text-lg">Trigger</div>
+            <div class="text-xs opacity-60">Strong Emotion</div>
         </div>
     </div>
 
     <!-- Node 2: Reaction -->
-    <div class="relative">
-        <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
-        
-        <div v-click="2" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-             <div class="w-6 h-6 rounded-full bg-blue-600 shadow-lg transition-all mb-4"></div>
-             <div class="w-32 text-center absolute top-8">
-                <div class="font-bold text-lg">Reaction</div>
-                <div class="text-xs opacity-60">Instant Post</div>
-             </div>
+    <div class="flex flex-col items-center w-32">
+        <div class="relative w-6 h-6">
+            <div v-click-hide="2" class="absolute inset-0 w-6 h-6 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
+            <div v-click="2" class="absolute inset-0 w-6 h-6 rounded-full bg-blue-600 shadow-lg ring-4 ring-white dark:ring-[#121212]"></div>
+        </div>
+        <div v-click="2" class="mt-4 text-center">
+            <div class="font-bold text-lg">Reaction</div>
+            <div class="text-xs opacity-60">Instant Post</div>
         </div>
     </div>
 
     <!-- Node 3: Result -->
-    <div class="relative">
-        <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
-        
-        <div v-click="3" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-             <div class="w-6 h-6 rounded-full bg-blue-600 shadow-lg transition-all mb-4"></div>
-             <div class="w-32 text-center absolute top-8">
-                <div class="font-bold text-lg">Result</div>
-                <div class="text-xs opacity-60">Public Data</div>
-             </div>
+    <div class="flex flex-col items-center w-32">
+        <div class="relative w-6 h-6">
+            <div v-click-hide="3" class="absolute inset-0 w-6 h-6 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
+            <div v-click="3" class="absolute inset-0 w-6 h-6 rounded-full bg-blue-600 shadow-lg ring-4 ring-white dark:ring-[#121212]"></div>
+        </div>
+        <div v-click="3" class="mt-4 text-center">
+            <div class="font-bold text-lg">Result</div>
+            <div class="text-xs opacity-60">Public Data</div>
         </div>
     </div>
 
@@ -200,7 +197,7 @@ layout: default
 
 </div>
 
-<div v-click="4" class="mt-32 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-gray-500 rounded text-center italic opacity-80">
+<div v-click="4" class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-gray-500 rounded text-center italic opacity-80">
   "Without a pause, your temporary emotion becomes permanent data."
 </div>
 
@@ -213,6 +210,7 @@ layout: default
    - Click 3: 点亮"Result" (结果)。
 3. 视觉：没有任何花哨的颜色变化，只有“未发生(灰)”和“发生(蓝)”，非常清晰。
 -->
+
 ---
 
 # The Solution
