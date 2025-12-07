@@ -153,45 +153,10 @@ layout: default
     <!-- Background Line (Gray) -->
     <div class="absolute left-0 top-11 w-full h-1 bg-gray-200 dark:bg-gray-700 rounded"></div>
 
-    <!-- Node 1: Trigger -->
-    <div class="flex flex-col items-center w-32">
-        <!-- Dot Container -->
-        <div class="relative w-6 h-6">
-            <!-- Inactive State (Gray Dot) - hidden on click -->
-            <div v-click-hide="1" class="absolute inset-0 w-6 h-6 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
-            <!-- Active State (Blue Dot) - shown on click -->
-            <div v-click="1" class="absolute inset-0 w-6 h-6 rounded-full bg-blue-600 shadow-lg ring-4 ring-white dark:ring-[#121212]"></div>
-        </div>
-        <!-- Text - shown on click -->
-        <div v-click="1" class="mt-4 text-center">
-            <div class="font-bold text-lg">Trigger</div>
-            <div class="text-xs opacity-60">Strong Emotion</div>
-        </div>
-    </div>
-
-    <!-- Node 2: Reaction -->
-    <div class="flex flex-col items-center w-32">
-        <div class="relative w-6 h-6">
-            <div v-click-hide="2" class="absolute inset-0 w-6 h-6 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
-            <div v-click="2" class="absolute inset-0 w-6 h-6 rounded-full bg-blue-600 shadow-lg ring-4 ring-white dark:ring-[#121212]"></div>
-        </div>
-        <div v-click="2" class="mt-4 text-center">
-            <div class="font-bold text-lg">Reaction</div>
-            <div class="text-xs opacity-60">Instant Post</div>
-        </div>
-    </div>
-
-    <!-- Node 3: Result -->
-    <div class="flex flex-col items-center w-32">
-        <div class="relative w-6 h-6">
-            <div v-click-hide="3" class="absolute inset-0 w-6 h-6 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-white dark:ring-[#121212]"></div>
-            <div v-click="3" class="absolute inset-0 w-6 h-6 rounded-full bg-blue-600 shadow-lg ring-4 ring-white dark:ring-[#121212]"></div>
-        </div>
-        <div v-click="3" class="mt-4 text-center">
-            <div class="font-bold text-lg">Result</div>
-            <div class="text-xs opacity-60">Public Data</div>
-        </div>
-    </div>
+    <!-- Timeline Nodes -->
+    <TimelineNode :click="1" title="Trigger" subtitle="Strong Emotion" />
+    <TimelineNode :click="2" title="Reaction" subtitle="Instant Post" />
+    <TimelineNode :click="3" title="Result" subtitle="Public Data" />
 
   </div>
 
