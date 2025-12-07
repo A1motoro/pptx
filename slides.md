@@ -160,6 +160,36 @@ layout: default
 
 </div>
 
+<!-- Detailed Explanations -->
+<div class="grid grid-cols-3 gap-8 text-sm opacity-80">
+  <div v-click="1">
+    <ul class="list-disc list-inside space-y-1">
+      <li>Sudden event sparks intense emotion</li>
+      <li>Anger, excitement, or sadness floods in</li>
+      <li>Brain enters "fight or flight" mode</li>
+      <li>Rational thinking is hijacked</li>
+    </ul>
+  </div>
+
+  <div v-click="2">
+    <ul class="list-disc list-inside space-y-1">
+      <li>Immediately open social media app</li>
+      <li>Post content impulsively</li>
+      <li>No time for careful consideration</li>
+      <li>Seeking instant validation and feedback</li>
+    </ul>
+  </div>
+
+  <div v-click="3">
+    <ul class="list-disc list-inside space-y-1">
+      <li>Content becomes permanent digital record</li>
+      <li>Cannot be fully deleted or retracted</li>
+      <li>Archived and analyzed by algorithms forever</li>
+      <li>Potential source of future regret</li>
+    </ul>
+  </div>
+</div>
+
 </div>
 
 <div v-click="4" class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-gray-500 rounded text-center italic opacity-80">
