@@ -238,7 +238,7 @@ How a simple rule defeats the Complex System.
 
   <div class="text-center p-4 border rounded bg-green-50 dark:bg-green-900/10">
     <div class="font-bold text-green-600">The 48h Rule</div>
-    <div class="text-xs mt-2">Creates <b>Autonomy</b></div>
+    <div class="text-xs mt-2">Serves as a <b>Buffery</b></div>
     <div class="text-xs">(Stimulus <span class="text-blue-500">|| Pause ||</span> Choice)</div>
   </div>
 
