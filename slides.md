@@ -163,7 +163,7 @@ layout: default
 <!-- Detailed Explanations -->
 <div class="grid grid-cols-3 gap-4 mt-8 text-sm">
   <div v-click="1" class="p-4 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 rounded-lg">
-    <div class="font-bold text-red-600 mb-2">😡 Stage 1: Trigger</div>
+    <div class="font-bold text-red-600 mb-2">Stage 1: Trigger</div>
     <ul class="list-disc list-inside space-y-1 opacity-80">
       <li>Sudden event sparks intense emotion</li>
       <li>Anger, excitement, or sadness floods in</li>
@@ -173,7 +173,7 @@ layout: default
   </div>
 
   <div v-click="2" class="p-4 bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-800 rounded-lg">
-    <div class="font-bold text-orange-600 mb-2">⚡ Stage 2: Reaction</div>
+    <div class="font-bold text-orange-600 mb-2">Stage 2: Reaction</div>
     <ul class="list-disc list-inside space-y-1 opacity-80">
       <li>Immediately open social media app</li>
       <li>Post content impulsively</li>
@@ -183,7 +183,7 @@ layout: default
   </div>
 
   <div v-click="3" class="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg">
-    <div class="font-bold text-gray-600 dark:text-gray-400 mb-2">💾 Stage 3: Result</div>
+    <div class="font-bold text-gray-600 dark:text-gray-400 mb-2">Stage 3: Result</div>
     <ul class="list-disc list-inside space-y-1 opacity-80">
       <li>Content becomes permanent digital record</li>
       <li>Cannot be fully deleted or retracted</li>
