@@ -156,7 +156,7 @@ layout: default
 <!-- Timeline Nodes -->
 <TimelineNode :click="1" title="Trigger" subtitle="Strong Emotion" />
 <TimelineNode :click="2" title="Reaction" subtitle="Instant Post" />
-<TimelineNode :click="3" title="Result" subtitle="Public Data" />
+<TimelineNode :click="3" title="Result" subtitle="Regret Publishing" />
 
 </div>
 
