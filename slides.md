@@ -163,32 +163,32 @@ layout: default
 <!-- Detailed Explanations -->
 <div class="grid grid-cols-3 gap-4 mt-8 text-sm">
   <div v-click="1" class="p-4 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 rounded-lg">
-    <div class="font-bold text-red-600 mb-2">😡 阶段一：触发</div>
+    <div class="font-bold text-red-600 mb-2">😡 Stage 1: Trigger</div>
     <ul class="list-disc list-inside space-y-1 opacity-80">
-      <li>突发事件引发强烈情绪</li>
-      <li>愤怒、兴奋、悲伤瞬间涌现</li>
-      <li>大脑进入"战或逃"模式</li>
-      <li>理性思考被情绪劫持</li>
+      <li>Sudden event sparks intense emotion</li>
+      <li>Anger, excitement, or sadness floods in</li>
+      <li>Brain enters "fight or flight" mode</li>
+      <li>Rational thinking is hijacked</li>
     </ul>
   </div>
 
   <div v-click="2" class="p-4 bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-800 rounded-lg">
-    <div class="font-bold text-orange-600 mb-2">⚡ 阶段二：反应</div>
+    <div class="font-bold text-orange-600 mb-2">⚡ Stage 2: Reaction</div>
     <ul class="list-disc list-inside space-y-1 opacity-80">
-      <li>立即打开社交媒体应用</li>
-      <li>冲动性地发布内容</li>
-      <li>没有经过深思熟虑</li>
-      <li>寻求即时的认同和反馈</li>
+      <li>Immediately open social media app</li>
+      <li>Post content impulsively</li>
+      <li>No time for careful consideration</li>
+      <li>Seeking instant validation and feedback</li>
     </ul>
   </div>
 
   <div v-click="3" class="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg">
-    <div class="font-bold text-gray-600 dark:text-gray-400 mb-2">💾 阶段三：后果</div>
+    <div class="font-bold text-gray-600 dark:text-gray-400 mb-2">💾 Stage 3: Result</div>
     <ul class="list-disc list-inside space-y-1 opacity-80">
-      <li>内容成为永久的数字记录</li>
-      <li>无法完全删除或撤回</li>
-      <li>被算法永久存档和分析</li>
-      <li>可能在未来引发后悔</li>
+      <li>Content becomes permanent digital record</li>
+      <li>Cannot be fully deleted or retracted</li>
+      <li>Archived and analyzed by algorithms forever</li>
+      <li>Potential source of future regret</li>
     </ul>
   </div>
 </div>
