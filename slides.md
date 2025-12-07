@@ -145,10 +145,10 @@ layout: default
 # The Evidence
 ### The Cycle of Regret
 
-<div class="w-full max-w-3xl mx-auto mt-8">
+<div class="w-full max-w-3xl mx-auto mt-12">
 
 <!-- Timeline Container -->
-<div class="relative flex justify-between items-start pt-8 pb-8">
+<div class="relative flex justify-between items-start pt-8 pb-16">
 
 <!-- Background Line (Gray) -->
 <div class="absolute left-0 top-11 w-full h-1 bg-gray-200 dark:bg-gray-700 rounded"></div>
@@ -161,10 +161,9 @@ layout: default
 </div>
 
 <!-- Detailed Explanations -->
-<div class="grid grid-cols-3 gap-4 mt-8 text-sm">
-  <div v-click="1" class="p-4 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 rounded-lg">
-    <div class="font-bold text-red-600 mb-2">Stage 1: Trigger</div>
-    <ul class="list-disc list-inside space-y-1 opacity-80">
+<div class="grid grid-cols-3 gap-8 text-sm opacity-80">
+  <div v-click="1">
+    <ul class="list-disc list-inside space-y-1">
       <li>Sudden event sparks intense emotion</li>
       <li>Anger, excitement, or sadness floods in</li>
       <li>Brain enters "fight or flight" mode</li>
@@ -172,9 +171,8 @@ layout: default
     </ul>
   </div>
 
-  <div v-click="2" class="p-4 bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-800 rounded-lg">
-    <div class="font-bold text-orange-600 mb-2">Stage 2: Reaction</div>
-    <ul class="list-disc list-inside space-y-1 opacity-80">
+  <div v-click="2">
+    <ul class="list-disc list-inside space-y-1">
       <li>Immediately open social media app</li>
       <li>Post content impulsively</li>
       <li>No time for careful consideration</li>
@@ -182,9 +180,8 @@ layout: default
     </ul>
   </div>
 
-  <div v-click="3" class="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg">
-    <div class="font-bold text-gray-600 dark:text-gray-400 mb-2">Stage 3: Result</div>
-    <ul class="list-disc list-inside space-y-1 opacity-80">
+  <div v-click="3">
+    <ul class="list-disc list-inside space-y-1">
       <li>Content becomes permanent digital record</li>
       <li>Cannot be fully deleted or retracted</li>
       <li>Archived and analyzed by algorithms forever</li>
@@ -195,7 +192,7 @@ layout: default
 
 </div>
 
-<div v-click="4" class="mt-6 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-gray-500 rounded text-center italic opacity-80">
+<div v-click="4" class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-gray-500 rounded text-center italic opacity-80">
   "Without a pause, your temporary emotion becomes permanent data."
 </div>
 
