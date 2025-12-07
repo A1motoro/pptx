@@ -43,5 +43,5 @@ Now we think about how a simple rule defeats the Complex System of social medium
 Social media wants your immediate reaction, the impulse! Generally because we want validation, we follow it. But here comes the 48-h rule. It serves as a buffer. The Pause it provides would creat real autonomy for individuals.  
 You also get your self protected: you show your mature side to the public.
 
-## Slide 8: 
-Now come to the conclusion. "A private life makes a public life worth living". Though we need to share everything, we could control it with the 
+## Slide 8:  Conclusion
+Now come to the conclusion. "A private life makes a public life worth living". Though we need to share everything, we still could control it with the 48 h rebeliion today!
