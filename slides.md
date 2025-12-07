@@ -146,19 +146,19 @@ layout: default
 ### The Cycle of Regret
 
 <div class="w-full max-w-3xl mx-auto mt-12">
-  
-  <!-- Timeline Container -->
-  <div class="relative flex justify-between items-start pt-8 pb-16">
-    
-    <!-- Background Line (Gray) -->
-    <div class="absolute left-0 top-11 w-full h-1 bg-gray-200 dark:bg-gray-700 rounded"></div>
 
-    <!-- Timeline Nodes -->
-    <TimelineNode :click="1" title="Trigger" subtitle="Strong Emotion" />
-    <TimelineNode :click="2" title="Reaction" subtitle="Instant Post" />
-    <TimelineNode :click="3" title="Result" subtitle="Public Data" />
+<!-- Timeline Container -->
+<div class="relative flex justify-between items-start pt-8 pb-16">
 
-  </div>
+<!-- Background Line (Gray) -->
+<div class="absolute left-0 top-11 w-full h-1 bg-gray-200 dark:bg-gray-700 rounded"></div>
+
+<!-- Timeline Nodes -->
+<TimelineNode :click="1" title="Trigger" subtitle="Strong Emotion" />
+<TimelineNode :click="2" title="Reaction" subtitle="Instant Post" />
+<TimelineNode :click="3" title="Result" subtitle="Public Data" />
+
+</div>
 
 </div>
 
