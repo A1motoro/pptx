@@ -227,7 +227,7 @@ How a simple rule defeats the Complex System.
 <div class="grid grid-cols-3 gap-2 mt-8 items-center">
 
   <div class="text-center p-4 border rounded bg-red-50 dark:bg-red-900/10">
-    <div class="font-bold text-red-600">The Algorithm</div>
+    <div class="font-bold text-red-600">Social Media</div>
     <div class="text-xs mt-2">Feeds on <b>Impulse</b></div>
     <div class="text-xs">(Stimulus <carbon-arrow-right /> Reaction)</div>
   </div>
