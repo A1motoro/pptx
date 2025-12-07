@@ -119,8 +119,7 @@ layout: default
   <div class="text-4xl mb-2">⚡</div>
   <div class="font-bold text-lg mb-1 text-red-700 dark:text-red-400">The Urgency Trap</div>
   <div class="text-sm opacity-80">
-    Algorithms thrive on <b>Impulse</b>.
-    <br>They want our raw, unfiltered emotions because that drives engagement.
+    But instant sharing contains <b>raw, unfiltered</b> emotions.
   </div>
 </div>
 
