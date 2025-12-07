@@ -247,7 +247,6 @@ How a simple rule defeats the Complex System.
 <br>
 
 <div v-click class="mt-4 text-center">
-  <div class="mb-2"><b>Starve the Machine:</b> You withhold the raw data it craves.</div>
   <div class="mb-2"><b>Protect the Self:</b> You ensure your public self is mature.</div>
 </div>
 
