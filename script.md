@@ -40,4 +40,8 @@ Before, you experience, and you exhibit. Now we need a "Magic PAUSE".It can turn
 
 ## Slide 7： Why It Works?
 Now we think about how a simple rule defeats the Complex System of social medium.  
-Social media wants your immediate reaction, the impulse! Generally because we want validation, we follow it. But here comes the 48-h rule. It is a buffer, a Autonom
+Social media wants your immediate reaction, the impulse! Generally because we want validation, we follow it. But here comes the 48-h rule. It serves as a buffer. The Pause it provides would creat real autonomy for individuals.  
+You also get your self protected: you show your mature side to the public.
+
+## Slide 8: 
+Now come to the conclusion. "A private life makes a public life worth living". Though we need to share everything, we could control it with the 

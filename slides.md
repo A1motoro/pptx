@@ -274,14 +274,6 @@ class: text-center
 </div>
 
 <div class="text-left max-w-lg mx-auto">
-  <p class="mb-4">
-    <carbon-checkmark-filled class="inline text-green-500 mr-2"/>
-    Privacy is not dead, but it requires work.
-  </p>
-  <p class="mb-4">
-    <carbon-checkmark-filled class="inline text-green-500 mr-2"/>
-    Don't wait for legislation.
-  </p>
   <p>
     <carbon-checkmark-filled class="inline text-green-500 mr-2"/>
     <b>Start the 48-Hour Rebellion today.</b>
