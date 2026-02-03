@@ -18,6 +18,8 @@ title: The Mark We Leave
   </span>
 </div>
 
+<div class="absolute bottom-4 left-0 right-0 text-center text-xs opacity-60">Background: <a href="https://images.unsplash.com/photo-1451187580459-43490279c0fa" target="_blank" class="!opacity-80">Unsplash</a></div>
+
 ---
 layout: two-cols-header
 class: author-page
@@ -35,6 +37,8 @@ class: author-page
 *Pulitzer Prize-winning author*
 
 - **Source:** *National Geographic Magazine*
+- **Focus:** The "Anthropocene" (term coined by Paul Crutzen)
+- **Angle:** Moving from the **Holocene** to the **Anthropocene**
 
 ::right::
 
@@ -45,10 +49,13 @@ class: author-page
 ### **Paul Crutzen**
 *Nobel Prize in Chemistry, 1995*
 
-- **The Concept:** Coined the term **"Anthropocene"**.
+- **The Concept:** Coined the term **"Anthropocene"**
+- **The Quote:**
 
 > "Let's stop it. We are no longer in the Holocene. We are in the Anthropocene."
 > — Paul Crutzen
+
+<div class="absolute bottom-4 left-0 right-0 text-center text-xs opacity-60">Left: <a href="https://www.barclayagency.com" target="_blank" class="!opacity-80">barclayagency.com</a> · Right: <a href="https://www1.folha.uol.com.br" target="_blank" class="!opacity-80">folha.uol.com.br</a></div>
 
 ---
 layout: two-cols-header
@@ -78,6 +85,8 @@ class: geologist-comparison
 - **The Trace:** Concrete, plastic, and steel isotopes.
 - **The Evidence:** Monochrome pollen (corn/wheat) & "Reef Gaps."
 - **The Cause:** **Us.**
+
+<div class="absolute bottom-4 left-0 right-0 text-center text-xs opacity-60">Left: <a href="https://k.sina.com.cn" target="_blank" class="!opacity-80">k.sina.com.cn</a> · Right: <a href="https://images.unsplash.com/photo-1449824913935-59a10b8d2000" target="_blank" class="!opacity-80">Unsplash</a></div>
 
 ---
 
@@ -120,6 +129,8 @@ layout: center
 
 <img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?q=80&w=2070&auto=format&fit=crop" class="mt-4 rounded shadow h-40 w-full object-cover" />
 
+<div class="absolute bottom-4 left-0 right-0 text-center text-xs opacity-60">Image: <a href="https://images.unsplash.com/photo-1508962914676-134849a727f0" target="_blank" class="!opacity-80">Unsplash</a></div>
+
 ---
 layout: statement
 ---
@@ -150,6 +161,11 @@ layout: statement
 # Q & A 
 
 <style>
+/* 有图片的幻灯片页脚：图片来源 */
+.slidev-layout .absolute.bottom-4 {
+  font-size: 0.65rem;
+  opacity: 0.7;
+}
 /* 作者页：两张头像缩小 */
 .author-page .author-photo {
   height: 160px !important;
