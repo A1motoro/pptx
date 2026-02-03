@@ -1,310 +1,183 @@
 ---
 theme: seriph
-background: https://source.unsplash.com/collection/94734566/1920x1080
+background: https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop
 class: text-center
 highlighter: shiki
-lineNumbers: false
-info: |
-  ## The 48-Hour Rebellion
-  Reaction Presentation
 drawings:
   persist: false
 transition: slide-left
-css: unocss
+title: The Mark We Leave
 ---
 
-# The 48-Hour Rebellion
-## Finding Agency in the Age of Algorithms
+# The Mark We Leave
+## Entering the Anthropocene
 
-<div class="abs-br m-6 text-xl opacity-50">
-  Yu Jia 125090877
+<div class="pt-12">
+  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
+    Jia Yu 125090877 <carbon:arrow-right class="inline"/>
+  </span>
 </div>
-
-<!-- note
-中文提示：
-开场定调。
-抛弃了复杂的理论，我们今天只谈一个核心：如何在算法时代通过一个简单的法则夺回主导权。
--->
 
 ---
-layout: image-right
-image: /Bryce.png
-class: my-auto
+layout: two-cols-header
+class: author-page
 ---
 
-# The Speaker
-### The Authority of Experience
+# Context & Author
 
-**Bryce Dallas Howard**
-<div class="opacity-80 text-sm mb-4">Actress / Director / Star of <i>Black Mirror</i>'s "Nosedive"</div>
+::left::
 
-*   **3rd Generation Entertainer**
-    *   Daughter of Ron Howard.
-*   **70 Years in the Spotlight**
-    *   Her family has navigated public life for decades.
+## Article Author
 
-<div v-click class="mt-6 p-3 bg-gray-100 dark:bg-gray-800 border-l-4 border-red-500 rounded-r text-left text-sm">
-  <b>Why listen to her?</b><br>
-  She isn't guessing. She possesses a <span class="text-red-600 font-bold">Blueprint</span> for survival that we desperately need.
-</div>
+<img src="/Elizabeth.png" alt="Elizabeth Kolbert" class="rounded-lg shadow-lg object-cover author-photo" style="height: 160px; width: auto; max-width: 100%;" />
 
-<div class="mt-4 text-xs opacity-50 text-left">
-  Resource: www.ted.com
-</div>
+### **Elizabeth Kolbert**
+*Pulitzer Prize-winning author*
 
-<!-- note
-中文提示：
-1. 介绍权威：Bryce Dallas Howard。
-2. 重点：她家族三代都在聚光灯下，对于“公开生活”的压力，她比任何人都懂。
--->
+- **Source:** *National Geographic Magazine*
+
+::right::
+
+## Concept Proposer
+
+<img src="/Paul.png" alt="Paul Crutzen" class="rounded-lg shadow-lg object-cover author-photo" style="height: 160px; width: auto; max-width: 100%;" />
+
+### **Paul Crutzen**
+*Nobel Prize in Chemistry, 1995*
+
+- **The Concept:** Coined the term **"Anthropocene"**.
+
+> "Let's stop it. We are no longer in the Holocene. We are in the Anthropocene."
+> — Paul Crutzen
 
 ---
-layout: default
+layout: two-cols-header
+class: geologist-comparison
 ---
 
-# The Context
-### The "Global Social Experiment"
+## Imagine you are a **Geologist** in the year **4026**.
 
-<div class="grid grid-cols-2 gap-8 mt-10">
+::left::
 
-<div v-click>
-  <h3 class="text-xl font-bold text-blue-600">The "Nosedive" Reality</h3>
-  <p class="opacity-80 mt-2">
-    In 2016, Bryce filmed a world governed by social ratings.
-    <br><br>
-    We aren't there yet, but we have entered a <b>New Era</b>.
-  </p>
-</div>
+# 65 Million Years Ago
+### The "Asteroid Layer"
 
-<div v-click>
-  <h3 class="text-xl font-bold text-red-600">The Problem</h3>
-  <ul class="list-disc list-inside mt-2 opacity-80">
-    <li>Everyone has a global audience.</li>
-    <li>We live publicly without guidance.</li>
-    <li>We seek "relevance" at any cost.</li>
-  </ul>
-</div>
+<img src="/Astriod.png" class="rounded-lg shadow-lg object-cover" style="height: 150px; width: 100%;" />
 
-</div>
+- **The Trace:** A thin layer of iridium.
+- **The Evidence:** Sudden disappearance of dinosaur fossils.
+- **The Cause:** A catastrophic external impact.
 
-<div v-click class="mt-12 text-center font-serif text-3xl italic opacity-60">
-  "We are making life-altering decisions about our boundaries with no precedent."
-</div>
+::right::
 
-<!-- note
-中文提示：
-1. 背景：我们正处在一个巨大的社会实验中。
-2. 痛点：每个人都有观众，但没人教我们怎么应对。
--->
+# The Present Day
+### The "Human Layer"
+
+<img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop" class="rounded-lg shadow-lg object-cover" style="height: 150px; width: 100%;" />
+
+- **The Trace:** Concrete, plastic, and steel isotopes.
+- **The Evidence:** Monochrome pollen (corn/wheat) & "Reef Gaps."
+- **The Cause:** **Us.**
 
 ---
 
-# The Trap
-### Why do we feel anxious?
+# Human Activity as a Geological Force
 
-<div class="text-sm mb-4 opacity-60">We are fighting human nature against supercomputers.</div>
+The article argues that our impact is now **stratigraphically significant**.
 
-<div class="grid grid-cols-2 gap-6">
+<table>
+<thead>
+<tr><th>Human Activity</th><th>Geological Trace (The Record)</th></tr>
+</thead>
+<tbody>
+<tr v-click="1"><td class="text-blue-600 dark:text-blue-400 font-semibold">Industrial Farming</td><td>Monochrome pollen record (Corn, Soy, Wheat)</td></tr>
+<tr v-click="2"><td class="text-blue-600 dark:text-blue-400 font-semibold">Deforestation</td><td>Massive soil erosion & sediment changes</td></tr>
+<tr v-click="3"><td class="text-blue-600 dark:text-blue-400 font-semibold">Carbon Emissions</td><td>Shifts in fossil ranges & rising sea levels</td></tr>
+<tr v-click="4"><td class="text-blue-600 dark:text-blue-400 font-semibold">Ocean Acidification</td><td><strong>"Reef Gaps"</strong> (The signature of mass extinctions)</td></tr>
+</tbody>
+</table>
 
-<div class="border border-gray-300 p-5 rounded-lg shadow-sm hover:shadow-md transition">
-  <div class="text-4xl mb-2">🍭</div>
-  <div class="font-bold text-lg mb-1">The Validation Loop</div>
-  <div class="text-sm opacity-80">
-    We crave instant connection.
-    <br>When something happens, our first instinct is: <b>"I must share this now."</b>
-  </div>
+<div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded">
+  We have transformed <strong>38%</strong> of ice-free land and quadrupled the population in just 200 years.
 </div>
-
-<div class="border border-gray-300 p-5 rounded-lg shadow-sm hover:shadow-md transition bg-red-50 dark:bg-red-900/20 border-red-200">
-  <div class="text-4xl mb-2">⚡</div>
-  <div class="font-bold text-lg mb-1 text-red-700 dark:text-red-400">The Urgency Trap</div>
-  <div class="text-sm opacity-80">
-    But instant sharing contains <b>raw, unfiltered</b> emotions.
-  </div>
-</div>
-
-</div>
-
-<div v-click class="mt-6 text-center font-serif text-2xl italic">
-  "We are trading our private moments for public metrics."
-</div>
-
-<!-- note
-中文提示：
-逻辑修正：这里不再引用Reference，而是讲心理机制。
-1. 验证循环：我们要即时反馈。
-2. 紧急陷阱：算法想要我们的“冲动”。
-这就是我们失去主导权的原因。
--->
-
----
-layout: default
----
-
-# The Evidence
-### The Cycle of Regret
-
-<div class="w-full max-w-3xl mx-auto mt-12">
-
-<!-- Timeline Container -->
-<div class="relative flex justify-between items-start pt-8 pb-16">
-
-<!-- Background Line (Gray) -->
-<div class="absolute left-0 top-11 w-full h-1 bg-gray-200 dark:bg-gray-700 rounded"></div>
-
-<!-- Timeline Nodes -->
-<TimelineNode :click="1" title="Trigger" subtitle="Strong Emotion" />
-<TimelineNode :click="2" title="Reaction" subtitle="Instant Post" />
-<TimelineNode :click="3" title="Result" subtitle="Regret Publishing" />
-
-</div>
-
-</div>
-
-<div v-click="4" class="p-4 bg-black/5 rounded text-gray-700 dark:text-gray-300 italic border-l-4 border-gray-500 mt-8 text-center">
-  "Once it's public, it's data. You can delete the post, but you can't undo the exposure."
-</div>
-
-<!-- note
-中文提示：
-1. 极简时间轴：灰线串联三个点。
-2. 动画逻辑：
-   - Click 1: 点亮"Trigger" (触发)。
-   - Click 2: 点亮"Reaction" (反应)。
-   - Click 3: 点亮"Result" (结果)。
-3. 视觉：没有任何花哨的颜色变化，只有“未发生(灰)”和“发生(蓝)”，非常清晰。
--->
-
----
-
-# The Solution
-### The "Cheryl Method"
-
-Bryce offers a rule from her mother to break this cycle.
-
-<div class="flex justify-center items-center my-10">
-  <div class="relative p-8 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-2xl transform hover:scale-105 transition duration-500">
-    <div class="text-5xl font-bold mb-2">The 2-Day Delay</div>
-    <div class="text-lg opacity-90">Rule: Wait 48 hours before posting anything.</div>
-  </div>
-</div>
-
-<div class="flex items-center justify-center mt-8 relative h-32">
-  <div class="flex items-center justify-center gap-8 absolute inset-0 transition-all duration-500">
-    <div class="flex-1 text-center">
-      <h4 class="font-bold text-xl mb-2">Step 1: Experience</h4>
-      <p class="text-sm opacity-70">Be present in private.</p>
-    </div>
-    <div class="flex-shrink-0 w-32 text-center"></div>
-    <div class="flex-1 text-center">
-      <h4 class="font-bold text-xl mb-2">Step 2: Exhibition</h4>
-      <p class="text-sm opacity-70">Calculate the public position later.</p>
-    </div>
-  </div>
-  
-  <div v-click class="flex items-center justify-center gap-8 absolute inset-0 transition-all duration-500 bg-white/90 dark:bg-black/90 backdrop-blur-sm z-10">
-     <div class="text-center">
-        <div class="text-4xl mb-2">⏸️</div>
-        <div class="text-2xl font-bold text-blue-600">The Magic Pause</div>
-        <div class="text-sm opacity-70">Turning "Reaction" into "Reflection"</div>
-     </div>
-  </div>
-</div>
-
-<!-- note
-中文提示：
-1. 解法：48小时法则。
-2. 重点：在“体验”和“展示”之间插入一个巨大的暂停键。
--->
-
----
-
-# Why It Works
-### My Reaction & Takeaway
-
-How a simple rule defeats the Complex System.
-
-<div class="grid grid-cols-3 gap-2 mt-8 items-center">
-
-  <div class="text-center p-4 border rounded bg-red-50 dark:bg-red-900/10">
-    <div class="font-bold text-red-600">Social Media</div>
-    <div class="text-xs mt-2">Feeds on <b>Impulse</b></div>
-    <div class="text-xs">(Stimulus <carbon-arrow-right /> Reaction)</div>
-  </div>
-
-  <div class="text-center text-2xl text-gray-400">
-    <carbon-close-filled />
-  </div>
-
-  <div class="text-center p-4 border rounded bg-green-50 dark:bg-green-900/10">
-    <div class="font-bold text-green-600">The 48h Rule</div>
-    <div class="text-xs mt-2">Serves as a <b>Buffer</b></div>
-    <div class="text-xs">(Stimulus <span class="text-blue-500">|| Pause ||</span> Choice)</div>
-  </div>
-
-</div>
-
-<br>
-
-<div v-click class="mt-4 text-center">
-  <div class="mb-2"><b>Protect the Self:</b> You ensure your public self is mature.</div>
-</div>
-
-<div v-click class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 border-l-4 border-blue-500 rounded-r text-center italic text-lg text-gray-700 dark:text-gray-300">
-  "The Algorithm is a beast that eats our Impulse. <br>If we don't feed it immediately, we regain control."
-</div>
-
-<!-- note
-中文提示：
-1. 原理总结：饿死算法，夺回控制。
-2. 左边：算法吃“冲动”。
-3. 右边：延迟创造“自主”。
-4. 结论：这是我们作为普通人能做的最有效的反叛。
--->
 
 ---
 layout: center
-class: text-center
+---
+
+# My Response: The Paradox of Speed
+
+<div class="grid grid-cols-2 gap-8">
+<div>
+  <h3 class="text-orange-500">A Flash of Lightning</h3>
+  <p>Earth is 4.6 billion years old. Geological epochs usually last <strong>millions</strong> of years. We have altered the planet in less than <strong>200</strong> years.</p>
+</div>
+<div>
+  <h3 class="text-red-500">The Alarm Clock</h3>
+  <p>"Anthropocene" isn't just a scientific term. It's a <strong>warning label</strong> for our collective actions.</p>
+</div>
+</div>
+
+<img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?q=80&w=2070&auto=format&fit=crop" class="mt-4 rounded shadow h-40 w-full object-cover" />
+
+---
+layout: statement
+---
+
+# We are still ACCELERATING
+
+> ## "Let's stop it. We are no longer in the Holocene. We are in the Anthropocene."  
+> ## — Paul Crutzen
+
+---
+layout: center
 ---
 
 # Conclusion
 
-<div class="text-3xl font-serif italic mb-8 text-gray-600 dark:text-gray-300">
-  "A private life makes a public life worth living."
+- **The Anthropocene** is a record of our power.
+- **The Future** depends on whether we treat this name as a **Trophy** or a **Warning**.
+
+## **Thank you!**
+
+<div class="mt-12 text-sm opacity-50">
+References: "The Age of Man" by Elizabeth Kolbert, National Geographic.
 </div>
-
-<div class="text-left max-w-lg mx-auto">
-  <p>
-    <carbon-checkmark-filled class="inline text-green-500 mr-2"/>
-    <b>Start the 48-Hour Rebellion today.</b>
-  </p>
-</div>
-
-<div class="mt-12 opacity-50 text-sm">
-  Thank You
-</div>
-
-<!-- note
-中文提示：
-1. 总结：引用金句。
-2. 呼吁行动：别等法律，现在就开始。
--->
-
 ---
-layout: center
-class: text-center
+layout: statement
 ---
 
-<div class="relative">
-  <div class="absolute inset-0 flex items-center justify-center">
-    <div class="w-96 h-96 border-4 border-blue-200 dark:border-blue-800 rounded-full opacity-20"></div>
-  </div>
-  <div class="absolute inset-0 flex items-center justify-center">
-    <div class="w-64 h-64 border-2 border-purple-200 dark:border-purple-800 rounded-full opacity-30"></div>
-  </div>
-  <div class="relative z-10">
-    <h1 class="text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-      Q&A Session
-    </h1>
-  </div>
-</div>
+# Q & A 
+
+<style>
+/* 作者页：两张头像缩小 */
+.author-page .author-photo {
+  height: 160px !important;
+  width: auto !important;
+  max-width: 100%;
+  object-fit: contain;
+}
+.slidev-layout.right-col-center .slidev-layout>div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 4rem;
+}
+.slidev-layout.right-col-center .slidev-layout>div:first-child {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slidev-layout.right-col-center .slidev-layout>div:first-child img {
+  max-width: 45%;
+  max-height: 55vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+</style>
