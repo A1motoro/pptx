@@ -1,199 +1,329 @@
 ---
 theme: seriph
-background: https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop
+background: https://images.unsplash.com/photo-1511216113906-8f57bb83e776?auto=format&fit=crop&q=80
 class: text-center
 highlighter: shiki
 drawings:
   persist: false
 transition: slide-left
-title: The Mark We Leave
+title: Sleep - The Endangered Asset
+mdc: true
 ---
 
-# The Mark We Leave
-## Entering the Anthropocene
+# Sleep: The Endangered Asset
+
+## The Sleep Economy
+
+<p class="mt-8 text-sm opacity-60">125090877 · YuJia · Group 3</p>
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
-    Jia Yu 125090877 <carbon:arrow-right class="inline"/>
+    Press Space to Start <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
-<div class="absolute bottom-4 left-0 right-0 text-center text-xs opacity-60">Background: <a href="https://images.unsplash.com/photo-1451187580459-43490279c0fa" target="_blank" class="!opacity-80">Unsplash</a></div>
-
----
-layout: two-cols-header
-class: author-page
----
-
-# Context & Author
-
-::left::
-
-## Article Author
-
-<img src="/Elizabeth.png" alt="Elizabeth Kolbert" class="rounded-lg shadow-lg object-cover author-photo" style="height: 160px; width: auto; max-width: 100%;" />
-
-### **Elizabeth Kolbert**
-*Pulitzer Prize-winning author*
-
-- **Source:** *National Geographic Magazine*
-- **Focus:** The "Anthropocene" (term coined by Paul Crutzen)
-- **Angle:** Moving from the **Holocene** to the **Anthropocene**
-
-::right::
-
-## Concept Proposer
-
-<img src="/Paul.png" alt="Paul Crutzen" class="rounded-lg shadow-lg object-cover author-photo" style="height: 160px; width: auto; max-width: 100%;" />
-
-### **Paul Crutzen**
-*Nobel Prize in Chemistry, 1995*
-
-- **The Concept:** Coined the term **"Anthropocene"**
-- **The Quote:**
-
-> "Let's stop it. We are no longer in the Holocene. We are in the Anthropocene."
-> — Paul Crutzen
-
-<div class="absolute bottom-4 left-0 right-0 text-center text-xs opacity-60">Left: <a href="https://www.barclayagency.com" target="_blank" class="!opacity-80">barclayagency.com</a> · Right: <a href="https://www1.folha.uol.com.br" target="_blank" class="!opacity-80">folha.uol.com.br</a></div>
-
----
-layout: two-cols-header
-class: geologist-comparison
----
-
-## Imagine you are a **Geologist** in the year **4026**.
-
-::left::
-
-# 65 Million Years Ago
-### The "Asteroid Layer"
-
-<img src="/Astriod.png" class="rounded-lg shadow-lg object-cover" style="height: 150px; width: 100%;" />
-
-- **The Trace:** A thin layer of iridium.
-- **The Evidence:** Sudden disappearance of dinosaur fossils.
-- **The Cause:** A catastrophic external impact.
-
-::right::
-
-# The Present Day
-### The "Human Layer"
-
-<img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop" class="rounded-lg shadow-lg object-cover" style="height: 150px; width: 100%;" />
-
-- **The Trace:** Concrete, plastic, and steel isotopes.
-- **The Evidence:** Monochrome pollen (corn/wheat) & "Reef Gaps."
-- **The Cause:** **Us.**
-
-<div class="absolute bottom-4 left-0 right-0 text-center text-xs opacity-60">Left: <a href="https://k.sina.com.cn" target="_blank" class="!opacity-80">k.sina.com.cn</a> · Right: <a href="https://images.unsplash.com/photo-1449824913935-59a10b8d2000" target="_blank" class="!opacity-80">Unsplash</a></div>
-
----
-
-# Human Activity as a Geological Force
-
-The article argues that our impact is now **stratigraphically significant**.
-
-<table>
-<thead>
-<tr><th>Human Activity</th><th>Geological Trace (The Record)</th></tr>
-</thead>
-<tbody>
-<tr v-click="1"><td class="text-blue-600 dark:text-blue-400 font-semibold">Industrial Farming</td><td>Monochrome pollen record (Corn, Soy, Wheat)</td></tr>
-<tr v-click="2"><td class="text-blue-600 dark:text-blue-400 font-semibold">Deforestation</td><td>Massive soil erosion & sediment changes</td></tr>
-<tr v-click="3"><td class="text-blue-600 dark:text-blue-400 font-semibold">Carbon Emissions</td><td>Shifts in fossil ranges & rising sea levels</td></tr>
-<tr v-click="4"><td class="text-blue-600 dark:text-blue-400 font-semibold">Ocean Acidification</td><td><strong>"Reef Gaps"</strong> (The signature of mass extinctions)</td></tr>
-</tbody>
-</table>
-
-<div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded">
-  We have transformed <strong>38%</strong> of ice-free land and quadrupled the population in just 200 years.
+<div class="abs-br m-6 flex gap-2">
+  <button @click="$slidev.nav.prev" title="Previous" class="text-xl slidev-icon-btn opacity-50 fill-current hover:opacity-100">
+    <carbon:chevron-left />
+  </button>
+  <button @click="$slidev.nav.next" title="Next" class="text-xl slidev-icon-btn opacity-50 fill-current hover:opacity-100">
+    <carbon:chevron-right />
+  </button>
 </div>
+
+---
+layout: default
+class: biological-price-tag
+---
+
+# The Biological "Price Tag"
+
+<p class="text-amber-400 font-semibold text-lg tracking-wider uppercase">Sleep is our core biological asset — Matt Walker's findings</p>
+
+<div class="grid grid-cols-3 gap-8 pt-8 text-center">
+
+  <div v-click class="flex flex-col items-center">
+    <div class="w-28 h-28 mb-6 flex items-center justify-center rounded-2xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_30px_rgba(239,68,68,0.4)]">
+      <div class="i-ph-floppy-disk text-7xl opacity-80"></div>
+    </div>
+    <h3 class="font-black text-xl mb-3 drop-shadow">Memory</h3>
+    <p class="text-sm opacity-90 leading-relaxed">Failed to <span class="text-red-400 font-bold">"Save"</span> new information into the brain's hard drive.</p>
+  </div>
+
+  <div v-click class="flex flex-col items-center">
+    <div class="relative w-28 h-28 mb-6 flex flex-col items-center justify-end rounded-2xl bg-amber-500/20 border-2 border-amber-500/50 overflow-hidden shadow-[0_0_30px_rgba(245,158,11,0.3)]">
+      <div 
+        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-500 to-amber-400 transition-all duration-1500 ease-out" 
+        :class="$slidev.nav.clicks >= 2 ? 'h-[24%]' : 'h-0'"
+      ></div>
+      <div v-if="$slidev.nav.clicks >= 2" class="absolute top-2 left-0 right-0 text-3xl font-black text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]">+24%</div>
+      <div v-else class="text-4xl font-black text-amber-500/50">?</div>
+    </div>
+    <h3 class="font-black text-xl mb-3 drop-shadow">Cardiovascular</h3>
+    <p class="text-sm opacity-90 leading-relaxed"><span class="text-amber-400 font-bold">24%</span> spike in heart attacks following Daylight Saving time.</p>
+  </div>
+
+  <div v-click class="flex flex-col items-center">
+    <div class="relative w-28 h-28 mb-6 flex flex-col items-center justify-end rounded-2xl bg-red-600/30 border-2 border-red-500/60 overflow-hidden shadow-[0_0_30px_rgba(220,38,38,0.4)]">
+      <div 
+        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-600 to-red-500 transition-all duration-1500 ease-in-out" 
+        :class="$slidev.nav.clicks >= 3 ? 'h-[30%]' : 'h-full'"
+      ></div>
+      <div v-if="$slidev.nav.clicks >= 3" class="absolute top-2 left-0 right-0 text-3xl font-black text-red-400 animate-pulse drop-shadow-[0_0_10px_rgba(248,113,113,0.8)]">-70%</div>
+      <div v-else class="text-4xl font-black text-red-500/50">?</div>
+    </div>
+    <h3 class="font-black text-xl mb-3 drop-shadow">Immune System</h3>
+    <p class="text-sm opacity-90 leading-relaxed"><span class="text-red-400 font-bold">70%</span> drop in Natural Killer cell activity after one night of short sleep.</p>
+  </div>
+
+</div>
+
+<p v-click class="mt-10 text-lg opacity-80 max-w-2xl mx-auto">But this asset is being severely depleted by modern workplace systems.</p>
+
+<style>
+.biological-price-tag h1 { font-size: 2.5rem !important; font-weight: 900 !important; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+.transition-all { transition-property: all; }
+.duration-1500 { transition-duration: 1500ms; }
+</style>
 
 ---
 layout: center
+class: text-center
 ---
 
-# My Response: The Paradox of Speed
+# A Sanctioned Hazard
 
-<div class="grid grid-cols-2 gap-8">
-<div>
-  <h3 class="text-orange-500">A Flash of Lightning</h3>
-  <p>Earth is 4.6 billion years old. Geological epochs usually last <strong>millions</strong> of years. We have altered the planet in less than <strong>200</strong> years.</p>
-</div>
-<div>
-  <h3 class="text-red-500">The Alarm Clock</h3>
-  <p>"Anthropocene" isn't just a scientific term. It's a <strong>warning label</strong> for our collective actions.</p>
-</div>
+<p class="mt-4 opacity-60 text-sm tracking-wider uppercase">Part 2 — Occupation as asset depletion</p>
+
+<v-clicks>
+
+<div class="mt-12 max-w-2xl mx-auto">
+  <blockquote class="text-xl opacity-90 border-l-4 border-red-500 pl-6 py-4 text-left">
+    "The World Health Organization has classified night shift work as a <strong>probable carcinogen</strong>."
+  </blockquote>
 </div>
 
-<img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?q=80&w=2070&auto=format&fit=crop" class="mt-4 rounded shadow h-40 w-full object-cover" />
+<p class="mt-10 text-lg opacity-90">
+  Jobs that cause sleep loss are <strong>harmful extraction</strong> of the body — not "dedication," but <strong>occupational hazard</strong>.
+</p>
 
-<div class="absolute bottom-4 left-0 right-0 text-center text-xs opacity-60">Image: <a href="https://images.unsplash.com/photo-1508962914676-134849a727f0" target="_blank" class="!opacity-80">Unsplash</a></div>
+</v-clicks>
 
 ---
-layout: statement
+layout: default
+class: text-center economy-section
 ---
 
-# We are still ACCELERATING
+# The Sleep Economy
 
-> ## "Let's stop it. We are no longer in the Holocene. We are in the Anthropocene."  
-> ## — Paul Crutzen
+<p class="mt-6 opacity-70 text-lg">When work depletes biological asset, sleep enters the realm of economic exchange.</p>
+
+<div class="mt-12 grid grid-cols-2 gap-12 max-w-2xl mx-auto">
+  <div v-click class="flex flex-col items-center p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+    <div class="i-ph-cpu text-5xl mb-3 opacity-70"></div>
+    <p class="font-bold">Sleep pods</p>
+    <p class="text-sm opacity-70 mt-1">Tech giants, "tool maintenance"</p>
+  </div>
+  <div v-click class="flex flex-col items-center p-6 rounded-2xl bg-red-500/10 border border-red-500/30">
+    <div class="i-ph-moon text-5xl mb-3 opacity-70"></div>
+    <p class="font-bold">Night workers</p>
+    <p class="text-sm opacity-70 mt-1">Delivery, nurses, drivers...</p>
+  </div>
+</div>
+
+<style>
+.economy-section h1 { font-size: 2.5rem !important; font-weight: 900 !important; }
+.sleep-section h1 { font-size: 2.5rem !important; font-weight: 900 !important; }
+</style>
+
+---
+layout: default
+class: sleep-section
+---
+
+<div class="flex justify-center items-center gap-1 mb-6">
+  <span class="w-2.5 h-2.5 rounded-full bg-current opacity-100"></span>
+  <span class="w-12 h-0.5 bg-current opacity-20"></span>
+  <span class="w-2.5 h-2.5 rounded-full bg-current opacity-30"></span>
+</div>
+
+# Sleep Pods: Tools, Not Welfare
+
+<p class="mt-2 opacity-60 text-sm">Part 4 — Depletion, extraction, instrumentalization</p>
+
+<div class="mt-8 max-w-2xl mx-auto space-y-5">
+  <div v-click class="flex items-center gap-6">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-amber-500/20 border-2 border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+      <div class="i-ph-cpu text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">Nap pods in tech offices</p>
+      <p class="text-sm opacity-80">Google, Meta — sleep facilities as workplace "perk."</p>
+    </div>
+  </div>
+  <div v-click class="flex items-center gap-6">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-amber-500/20 border-2 border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+      <div class="i-ph-chart-line-up text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">Investment in sleep as means of production</p>
+      <p class="text-sm opacity-80">Not welfare — capital invested in the worker's biological asset to maximize output.</p>
+    </div>
+  </div>
+  <div v-click class="flex items-center gap-6">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-amber-500/20 border-2 border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+      <div class="i-ph-wrench text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">Tool maintenance</p>
+      <p class="text-sm opacity-80">Shorten repair time, faster return to the next production cycle.</p>
+    </div>
+  </div>
+</div>
+
+---
+layout: default
+class: sleep-section
+---
+
+<div class="flex justify-center items-center gap-1 mb-6">
+  <span class="w-2.5 h-2.5 rounded-full bg-current opacity-30"></span>
+  <span class="w-12 h-0.5 bg-current opacity-20"></span>
+  <span class="w-2.5 h-2.5 rounded-full bg-current opacity-100"></span>
+</div>
+
+# The Consumption of Health
+
+<p class="mt-2 opacity-60 text-sm">Certain jobs force workers to "sell" sleep quality</p>
+
+<div class="mt-8 grid grid-cols-2 gap-x-10 gap-y-8 max-w-4xl mx-auto">
+  <div v-click class="flex items-start gap-5 p-4 rounded-xl bg-white/5 border border-white/10">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.3)]">
+      <div class="i-ph-moon text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">Night shift workers</p>
+      <p class="text-sm opacity-80 mt-1">Nurses, security, factory workers — circadian rhythm destroyed.</p>
+    </div>
+  </div>
+  <div v-click class="flex items-start gap-5 p-4 rounded-xl bg-white/5 border border-white/10">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.3)]">
+      <div class="i-ph-package text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">Delivery workers</p>
+      <p class="text-sm opacity-80 mt-1">Late-night orders, irregular schedules, no fixed rest.</p>
+    </div>
+  </div>
+  <div v-click class="flex items-start gap-5 p-4 rounded-xl bg-white/5 border border-white/10">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.3)]">
+      <div class="i-ph-truck text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">Truck / long-haul drivers</p>
+      <p class="text-sm opacity-80 mt-1">Tight deadlines, sleep in fragments.</p>
+    </div>
+  </div>
+  <div v-click class="flex items-start gap-5 p-4 rounded-xl bg-white/5 border border-white/10">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.3)]">
+      <div class="i-ph-phone text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">On-call workers</p>
+      <p class="text-sm opacity-80 mt-1">IT, doctors — sleep never guaranteed.</p>
+    </div>
+  </div>
+</div>
+
+---
+layout: default
+class: sleep-section
+---
+
+# Support & Compensation: What We Deserve
+
+<p class="mt-2 opacity-60 text-sm">Part 5 — From personal will to institutional justice</p>
+
+<div class="mt-8 max-w-2xl mx-auto space-y-5">
+  <div v-click class="flex items-center gap-6">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-green-500/20 border-2 border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+      <div class="i-ph-headset text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">Counseling & sleep experts</p>
+      <p class="text-sm opacity-80">Psychological and sleep specialist support for affected workers.</p>
+    </div>
+  </div>
+  <div v-click class="flex items-center gap-6">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-green-500/20 border-2 border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+      <div class="i-ph-currency-dollar text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">Night shift subsidies</p>
+      <p class="text-sm opacity-80">Economic compensation for work that damages sleep.</p>
+    </div>
+  </div>
+  <div v-click class="flex items-center gap-6">
+    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-green-500/20 border-2 border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+      <div class="i-ph-scales text-4xl opacity-80"></div>
+    </div>
+    <div>
+      <p class="font-bold">Legal oversight</p>
+      <p class="text-sm opacity-80">Regulations on work hours and shift patterns that harm health.</p>
+    </div>
+  </div>
+</div>
+
+<p v-click class="mt-8 text-sm opacity-70 max-w-2xl mx-auto">Society and employers must provide compensation — not rely on individual effort alone.</p>
 
 ---
 layout: center
+class: text-center
 ---
 
 # Conclusion
 
-- **The Anthropocene** is a record of our power.
-- **The Future** depends on whether we treat this name as a **Trophy** or a **Warning**.
+<v-clicks>
 
-## **Thank you!**
+### Sleep health must be part of occupational safety.
 
-<div class="mt-12 text-sm opacity-50">
-References: "The Age of Man" by Elizabeth Kolbert, National Geographic.
+### Sleep should not be a commodity to be sold indefinitely.
+
+<h2 class="pt-12 font-bold">
+  It should be an <span class="text-amber-400">inviolable human right</span>.
+</h2>
+
+</v-clicks>
+
+---
+layout: center
+---
+
+# Thank You!
+
+<p class="opacity-50">References: Matt Walker, Ted 2019 / WHO IARC Monographs</p>
+
+<div class="pt-10 flex gap-8 justify-center items-center flex-wrap">
+  <a href="mailto:125090877@link.cuhk.edu.cn" class="flex flex-col items-center gap-1 p-2 opacity-50 hover:opacity-100">
+    <div class="i-ph-envelope-simple text-2xl"></div>
+    <span class="text-xs">Contact</span>
+  </a>
+  <a href="https://github.com/slidevjs/slidev" target="_blank" class="flex flex-col items-center gap-1 p-2 opacity-50 hover:opacity-100">
+    <carbon:logo-github class="text-2xl" />
+    <span class="text-xs">Slidev</span>
+  </a>
+  <a href="https://github.com/A1motoro/pptx" target="_blank" class="flex flex-col items-center gap-1 p-2 opacity-50 hover:opacity-100">
+    <carbon:logo-github class="text-2xl" />
+    <span class="text-xs">This Project</span>
+  </a>
 </div>
+
 ---
-layout: statement
+layout: center
+class: text-center
 ---
 
-# Q & A 
+# Q&A Session
 
-<style>
-/* 有图片的幻灯片页脚：图片来源 */
-.slidev-layout .absolute.bottom-4 {
-  font-size: 0.65rem;
-  opacity: 0.7;
-}
-/* 作者页：两张头像缩小 */
-.author-page .author-photo {
-  height: 160px !important;
-  width: auto !important;
-  max-width: 100%;
-  object-fit: contain;
-}
-.slidev-layout.right-col-center .slidev-layout>div:last-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 4rem;
-}
-.slidev-layout.right-col-center .slidev-layout>div:first-child {
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.slidev-layout.right-col-center .slidev-layout>div:first-child img {
-  max-width: 45%;
-  max-height: 55vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 0.75rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-</style>
+<p class="mt-8 text-xl opacity-70">Questions?</p>
+
