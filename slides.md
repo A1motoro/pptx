@@ -325,5 +325,7 @@ class: text-center
 
 # Q&A Session
 
-<p class="mt-8 text-xl opacity-70">Questions?</p>
+<p class="mt-8 text-2xl opacity-80">Questions?</p>
+
+<p class="mt-4 text-sm opacity-50">125090877 · YuJia · Group 3</p>
 
