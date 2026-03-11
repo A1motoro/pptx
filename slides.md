@@ -36,7 +36,7 @@ layout: default
 class: biological-price-tag
 ---
 
-# The Biological "Price Tag"
+# Summary Of the TED Talk
 
 <p class="text-amber-400 font-semibold text-lg tracking-wider uppercase">Sleep is our core biological asset — Matt Walker's findings</p>
 
