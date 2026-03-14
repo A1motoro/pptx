@@ -1,331 +1,200 @@
 ---
-theme: seriph
-background: https://images.unsplash.com/photo-1511216113906-8f57bb83e776?auto=format&fit=crop&q=80
-class: text-center
-highlighter: shiki
-drawings:
-  persist: false
-transition: slide-left
-title: Sleep - The Endangered Asset
-mdc: true
+theme: default
+layout: cover
+class: text-center cover-gradient
 ---
 
-# Sleep: The Endangered Asset
-
-## The Sleep Economy
-
-<p class="mt-8 text-sm opacity-60">125090877 · YuJia · Group 3</p>
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
-    Press Space to Start <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.prev" title="Previous" class="text-xl slidev-icon-btn opacity-50 fill-current hover:opacity-100">
-    <carbon:chevron-left />
-  </button>
-  <button @click="$slidev.nav.next" title="Next" class="text-xl slidev-icon-btn opacity-50 fill-current hover:opacity-100">
-    <carbon:chevron-right />
-  </button>
-</div>
-
----
-layout: default
-class: biological-price-tag
----
-
-# Summary Of the TED Talk
-
-<p class="text-amber-400 font-semibold text-lg tracking-wider uppercase">Sleep is our core biological asset — Matt Walker's findings</p>
-
-<div class="grid grid-cols-3 gap-8 pt-8 text-center">
-
-  <div v-click class="flex flex-col items-center">
-    <div class="w-28 h-28 mb-6 flex items-center justify-center rounded-2xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_30px_rgba(239,68,68,0.4)]">
-      <div class="i-ph-floppy-disk text-7xl opacity-80"></div>
-    </div>
-    <h3 class="font-black text-xl mb-3 drop-shadow">Memory</h3>
-    <p class="text-sm opacity-90 leading-relaxed">Failed to <span class="text-red-400 font-bold">"Save"</span> new information into the brain's hard drive.</p>
-  </div>
-
-  <div v-click class="flex flex-col items-center">
-    <div class="relative w-28 h-28 mb-6 flex flex-col items-center justify-end rounded-2xl bg-amber-500/20 border-2 border-amber-500/50 overflow-hidden shadow-[0_0_30px_rgba(245,158,11,0.3)]">
-      <div 
-        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-500 to-amber-400 transition-all duration-1500 ease-out" 
-        :class="$slidev.nav.clicks >= 2 ? 'h-[24%]' : 'h-0'"
-      ></div>
-      <div v-if="$slidev.nav.clicks >= 2" class="absolute top-2 left-0 right-0 text-3xl font-black text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]">+24%</div>
-      <div v-else class="text-4xl font-black text-amber-500/50">?</div>
-    </div>
-    <h3 class="font-black text-xl mb-3 drop-shadow">Cardiovascular</h3>
-    <p class="text-sm opacity-90 leading-relaxed"><span class="text-amber-400 font-bold">24%</span> spike in heart attacks following Daylight Saving time.</p>
-  </div>
-
-  <div v-click class="flex flex-col items-center">
-    <div class="relative w-28 h-28 mb-6 flex flex-col items-center justify-end rounded-2xl bg-red-600/30 border-2 border-red-500/60 overflow-hidden shadow-[0_0_30px_rgba(220,38,38,0.4)]">
-      <div 
-        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-600 to-red-500 transition-all duration-1500 ease-in-out" 
-        :class="$slidev.nav.clicks >= 3 ? 'h-[30%]' : 'h-full'"
-      ></div>
-      <div v-if="$slidev.nav.clicks >= 3" class="absolute top-2 left-0 right-0 text-3xl font-black text-red-400 animate-pulse drop-shadow-[0_0_10px_rgba(248,113,113,0.8)]">-70%</div>
-      <div v-else class="text-4xl font-black text-red-500/50">?</div>
-    </div>
-    <h3 class="font-black text-xl mb-3 drop-shadow">Immune System</h3>
-    <p class="text-sm opacity-90 leading-relaxed"><span class="text-red-400 font-bold">70%</span> drop in Natural Killer cell activity after one night of short sleep.</p>
-  </div>
-
-</div>
-
-<p v-click class="mt-10 text-lg opacity-80 max-w-2xl mx-auto">But this asset is being severely depleted by modern workplace systems.</p>
-
-<style>
-.biological-price-tag h1 { font-size: 2.5rem !important; font-weight: 900 !important; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
-.transition-all { transition-property: all; }
-.duration-1500 { transition-duration: 1500ms; }
-</style>
-
----
-layout: center
-class: text-center
----
-
-# A Sanctioned Hazard
-
-<p class="mt-4 opacity-60 text-sm tracking-wider uppercase">Part 2 — Occupation as asset depletion</p>
-
-<v-clicks>
-
-<div class="mt-12 max-w-2xl mx-auto">
-  <blockquote class="text-xl opacity-90 border-l-4 border-red-500 pl-6 py-4 text-left">
-    "The World Health Organization has classified night shift work as a <strong>probable carcinogen</strong>."
-  </blockquote>
-</div>
-
-<p class="mt-10 text-lg opacity-90">
-  Jobs that cause sleep loss are <strong>harmful extraction</strong> of the body — not "dedication," but <strong>occupational hazard</strong>.
-</p>
-
-</v-clicks>
-
----
-layout: default
-class: text-center economy-section
----
-
-# The Sleep Economy
-
-<p class="mt-6 opacity-70 text-lg">When work depletes biological asset, sleep enters the realm of economic exchange.</p>
-
-<div class="mt-12 grid grid-cols-2 gap-12 max-w-2xl mx-auto">
-  <div v-click class="flex flex-col items-center p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30">
-    <div class="i-ph-cpu text-5xl mb-3 opacity-70"></div>
-    <p class="font-bold">Sleep pods</p>
-    <p class="text-sm opacity-70 mt-1">Tech giants, "tool maintenance"</p>
-  </div>
-  <div v-click class="flex flex-col items-center p-6 rounded-2xl bg-red-500/10 border border-red-500/30">
-    <div class="i-ph-moon text-5xl mb-3 opacity-70"></div>
-    <p class="font-bold">Night workers</p>
-    <p class="text-sm opacity-70 mt-1">Delivery, nurses, drivers...</p>
-  </div>
+<div class="cover-content">
+<h1>AI-Powered Psychological Assessment System</h1>
+<h2>GAD-7 Evaluation with Automated Scoring</h2>
 </div>
 
 <style>
-.economy-section h1 { font-size: 2.5rem !important; font-weight: 900 !important; }
-.sleep-section h1 { font-size: 2.5rem !important; font-weight: 900 !important; }
+.slidev-layout.cover-gradient { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #4a90c4 100%) !important; }
+.cover-content h1 { color: #fff; font-weight: 700; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.2); }
+.cover-content h2 { color: rgba(255,255,255,0.9); font-weight: 400; margin-top: 0.5em; }
+.slide-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.slide-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+.problem-item::before { content: "•"; color: #dc2626; font-weight: bold; margin-right: 0.5em; }
+.goal-item::before { content: "•"; color: #059669; font-weight: bold; margin-right: 0.5em; }
 </style>
 
 ---
 layout: default
-class: sleep-section
+class: px-12
 ---
 
-<div class="flex justify-center items-center gap-1 mb-6">
-  <span class="w-2.5 h-2.5 rounded-full bg-current opacity-100"></span>
-  <span class="w-12 h-0.5 bg-current opacity-20"></span>
-  <span class="w-2.5 h-2.5 rounded-full bg-current opacity-30"></span>
+# Problem & Goals
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div v-click class="slide-card p-4 rounded-xl border border-red-200 bg-gradient-to-br from-red-50 to-white shadow-md">
+  <h3 class="text-lg font-semibold text-red-800 mb-2 pb-2 border-b-2 border-red-200">Problem</h3>
+  <ul class="space-y-1 text-sm text-gray-700">
+    <li class="problem-item">Traditional assessment takes 15-20 minutes</li>
+    <li class="problem-item">Manual scoring required, prone to errors</li>
+    <li class="problem-item">Not suitable for large-scale deployment</li>
+  </ul>
 </div>
 
-# Sleep Pods: Tools, Not Welfare
+<div v-click class="slide-card p-4 rounded-xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white shadow-md">
+  <h3 class="text-lg font-semibold text-emerald-800 mb-2 pb-2 border-b-2 border-emerald-200">Goals</h3>
+  <ul class="space-y-1 text-sm text-gray-700">
+    <li class="goal-item">Develop automated AI assessment system</li>
+    <li class="goal-item">Enable natural language dialogue interaction</li>
+    <li class="goal-item">Automated scoring and report generation</li>
+  </ul>
+</div>
 
-<p class="mt-2 opacity-60 text-sm">Part 4 — Depletion, extraction, instrumentalization</p>
+</div>
 
-<div class="mt-8 max-w-2xl mx-auto space-y-5">
-  <div v-click class="flex items-center gap-6">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-amber-500/20 border-2 border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3)]">
-      <div class="i-ph-cpu text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">Nap pods in tech offices</p>
-      <p class="text-sm opacity-80">Google, Meta — sleep facilities as workplace "perk."</p>
-    </div>
-  </div>
-  <div v-click class="flex items-center gap-6">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-amber-500/20 border-2 border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3)]">
-      <div class="i-ph-chart-line-up text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">Investment in sleep as means of production</p>
-      <p class="text-sm opacity-80">Not welfare — capital invested in the worker's biological asset to maximize output.</p>
-    </div>
-  </div>
-  <div v-click class="flex items-center gap-6">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-amber-500/20 border-2 border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.3)]">
-      <div class="i-ph-wrench text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">Tool maintenance</p>
-      <p class="text-sm opacity-80">Shorten repair time, faster return to the next production cycle.</p>
-    </div>
+<div v-click class="mt-4 p-4 rounded-xl bg-gradient-to-r from-slate-100 to-slate-50 border border-slate-200 shadow-sm">
+  <h3 class="text-base font-semibold text-slate-800 mb-2">Expected Outcomes</h3>
+  <div class="grid grid-cols-3 gap-3 text-sm">
+    <div class="p-2 rounded-lg bg-white/80">20 min → 5-8 min</div>
+    <div class="p-2 rounded-lg bg-white/80">100% GAD-7 compliant</div>
+    <div class="p-2 rounded-lg bg-white/80">Large-scale scalable</div>
   </div>
 </div>
 
 ---
 layout: default
-class: sleep-section
+class: px-12
 ---
 
-<div class="flex justify-center items-center gap-1 mb-6">
-  <span class="w-2.5 h-2.5 rounded-full bg-current opacity-30"></span>
-  <span class="w-12 h-0.5 bg-current opacity-20"></span>
-  <span class="w-2.5 h-2.5 rounded-full bg-current opacity-100"></span>
+# System Architecture
+
+<div class="grid grid-cols-3 gap-4 mt-4">
+
+<div v-click class="slide-card p-4 rounded-xl bg-gradient-to-b from-blue-50 to-blue-100/50 border-l-4 border-blue-500 shadow-sm">
+  <h3 class="text-base font-bold text-blue-900">Layer 1: Dialogue</h3>
+  <p class="text-sm text-blue-800 mt-1">Natural language interaction, fine-tuned LLM asks one question at a time</p>
 </div>
 
-# The Consumption of Health
+<div v-click class="slide-card p-4 rounded-xl bg-gradient-to-b from-indigo-50 to-indigo-100/50 border-l-4 border-indigo-500 shadow-sm">
+  <h3 class="text-base font-bold text-indigo-900">Layer 2: Scoring</h3>
+  <p class="text-sm text-indigo-800 mt-1">Understand response → Map 0-3 → Clarify when needed</p>
+</div>
 
-<p class="mt-2 opacity-60 text-sm">Certain jobs force workers to "sell" sleep quality</p>
+<div v-click class="slide-card p-4 rounded-xl bg-gradient-to-b from-violet-50 to-violet-100/50 border-l-4 border-violet-500 shadow-sm">
+  <h3 class="text-base font-bold text-violet-900">Layer 3: Reporting</h3>
+  <p class="text-sm text-violet-800 mt-1">Aggregate scores → Diagnosis → Recommendations & referral</p>
+</div>
 
-<div class="mt-8 grid grid-cols-2 gap-x-10 gap-y-8 max-w-4xl mx-auto">
-  <div v-click class="flex items-start gap-5 p-4 rounded-xl bg-white/5 border border-white/10">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.3)]">
-      <div class="i-ph-moon text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">Night shift workers</p>
-      <p class="text-sm opacity-80 mt-1">Nurses, security, factory workers — circadian rhythm destroyed.</p>
-    </div>
-  </div>
-  <div v-click class="flex items-start gap-5 p-4 rounded-xl bg-white/5 border border-white/10">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.3)]">
-      <div class="i-ph-package text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">Delivery workers</p>
-      <p class="text-sm opacity-80 mt-1">Late-night orders, irregular schedules, no fixed rest.</p>
-    </div>
-  </div>
-  <div v-click class="flex items-start gap-5 p-4 rounded-xl bg-white/5 border border-white/10">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.3)]">
-      <div class="i-ph-truck text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">Truck / long-haul drivers</p>
-      <p class="text-sm opacity-80 mt-1">Tight deadlines, sleep in fragments.</p>
-    </div>
-  </div>
-  <div v-click class="flex items-start gap-5 p-4 rounded-xl bg-white/5 border border-white/10">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-red-500/20 border-2 border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.3)]">
-      <div class="i-ph-phone text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">On-call workers</p>
-      <p class="text-sm opacity-80 mt-1">IT, doctors — sleep never guaranteed.</p>
-    </div>
-  </div>
 </div>
 
 ---
 layout: default
-class: sleep-section
+class: px-12
 ---
 
-# Support & Compensation: What We Deserve
+# Data Generation Pipeline
 
-<p class="mt-2 opacity-60 text-sm">Part 5 — From personal will to institutional justice</p>
+<div class="grid grid-cols-2 gap-6 mt-4">
 
-<div class="mt-8 max-w-2xl mx-auto space-y-5">
-  <div v-click class="flex items-center gap-6">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-green-500/20 border-2 border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-      <div class="i-ph-headset text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">Counseling & sleep experts</p>
-      <p class="text-sm opacity-80">Psychological and sleep specialist support for affected workers.</p>
-    </div>
-  </div>
-  <div v-click class="flex items-center gap-6">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-green-500/20 border-2 border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-      <div class="i-ph-currency-dollar text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">Night shift subsidies</p>
-      <p class="text-sm opacity-80">Economic compensation for work that damages sleep.</p>
-    </div>
-  </div>
-  <div v-click class="flex items-center gap-6">
-    <div class="w-16 h-16 shrink-0 flex items-center justify-center rounded-xl bg-green-500/20 border-2 border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-      <div class="i-ph-scales text-4xl opacity-80"></div>
-    </div>
-    <div>
-      <p class="font-bold">Legal oversight</p>
-      <p class="text-sm opacity-80">Regulations on work hours and shift patterns that harm health.</p>
-    </div>
-  </div>
+<div v-click class="slide-card p-4 rounded-xl bg-amber-50 border-l-4 border-amber-500 shadow-sm">
+  <h4 class="font-bold text-amber-900 mb-2">Step 1: AI-Generated Short Text</h4>
+  <ul class="text-sm text-amber-800/90 space-y-1">
+    <li>700 samples total: 7 questions × 100 per question</li>
+    <li>Use LLM to generate varied response expressions</li>
+    <li>Covers different severity levels (0–3) per item</li>
+  </ul>
 </div>
 
-<p v-click class="mt-8 text-sm opacity-70 max-w-2xl mx-auto">Society and employers must provide compensation — not rely on individual effort alone.</p>
+<div v-click class="slide-card p-4 rounded-xl bg-amber-50 border-l-4 border-amber-500 shadow-sm">
+  <h4 class="font-bold text-amber-900 mb-2">Step 2: Manual Annotation</h4>
+  <ul class="text-sm text-amber-800/90 space-y-1">
+    <li>4-person team annotates each sample</li>
+    <li>Fields: score (0–3) + confidence (high/medium/low)</li>
+    <li>Consistency check: Cohen's Kappa > 0.80</li>
+  </ul>
+</div>
 
----
-layout: center
-class: text-center
----
-
-# Conclusion
-
-<v-clicks>
-
-### Sleep health must be part of occupational safety.
-
-### Sleep should not be a commodity to be sold indefinitely.
-
-<h2 class="pt-12 font-bold">
-  It should be an <span class="text-amber-400">inviolable human right</span>.
-</h2>
-
-</v-clicks>
-
----
-layout: center
----
-
-# Thank You!
-
-<p class="opacity-50">References: Matt Walker, Ted 2019 / WHO IARC Monographs</p>
-
-<div class="pt-10 flex gap-8 justify-center items-center flex-wrap">
-  <a href="mailto:125090877@link.cuhk.edu.cn" class="flex flex-col items-center gap-1 p-2 opacity-50 hover:opacity-100">
-    <div class="i-ph-envelope-simple text-2xl"></div>
-    <span class="text-xs">Contact</span>
-  </a>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="flex flex-col items-center gap-1 p-2 opacity-50 hover:opacity-100">
-    <carbon:logo-github class="text-2xl" />
-    <span class="text-xs">Slidev</span>
-  </a>
-  <a href="https://github.com/A1motoro/pptx" target="_blank" class="flex flex-col items-center gap-1 p-2 opacity-50 hover:opacity-100">
-    <carbon:logo-github class="text-2xl" />
-    <span class="text-xs">This Project</span>
-  </a>
 </div>
 
 ---
-layout: center
-class: text-center
+layout: default
+class: px-12
 ---
 
-# Q&A Session
+# Core Functions & Prompts
 
-<p class="mt-8 text-2xl opacity-80">Questions?</p>
+<div class="mt-4 space-y-4">
 
-<p class="mt-4 text-sm opacity-50">125090877 · YuJia · Group 3</p>
+<div v-click class="p-3 rounded-lg bg-slate-100 border border-slate-200 text-sm">
+  <span class="font-semibold">System prompt:</span> GAD-7 assistant — empathetic, one question at a time, auto-map to scores.
+</div>
 
+<div class="grid grid-cols-3 gap-3">
+  <div v-click class="slide-card p-3 rounded-lg bg-indigo-50 border border-indigo-200">
+    <span class="font-mono font-bold text-indigo-700">record_score()</span>
+    <p class="text-xs text-slate-600 mt-1">Clear response → record → next question</p>
+  </div>
+  <div v-click class="slide-card p-3 rounded-lg bg-indigo-50 border border-indigo-200">
+    <span class="font-mono font-bold text-indigo-700">clarify_response()</span>
+    <p class="text-xs text-slate-600 mt-1">Ambiguous → ask for clarification</p>
+  </div>
+  <div v-click class="slide-card p-3 rounded-lg bg-indigo-50 border border-indigo-200">
+    <span class="font-mono font-bold text-indigo-700">calculate_and_report()</span>
+    <p class="text-xs text-slate-600 mt-1">All 7 done → generate report</p>
+  </div>
+</div>
+
+<div v-click class="p-3 rounded-lg bg-violet-50 border border-violet-200 text-sm">
+  <span class="font-semibold">User prompts:</span> Opening, 7 GAD-7 questions, clarification when needed, results with recommendations.
+</div>
+
+</div>
+
+---
+layout: default
+class: px-12
+---
+
+# Quick Demo
+
+<div class="grid grid-cols-2 gap-3 mt-4 text-sm">
+
+<div>
+  <div v-click class="p-3 rounded-lg bg-slate-100 mb-2">
+    <span class="font-bold text-slate-700">AI</span>
+    <p class="mt-1">"How often have you felt nervous or anxious in the past two weeks?"</p>
+  </div>
+  <div v-click class="p-3 rounded-lg bg-blue-50 ml-4 mb-2">
+    <span class="font-bold text-blue-700">User</span>
+    <p class="mt-1">"Several days"</p>
+  </div>
+  <div v-click class="p-3 rounded-lg bg-slate-100">
+    <span class="font-bold text-slate-700">AI</span>
+    <p class="mt-1 font-mono text-xs">record_score("gad7_1", 1) → Next Q</p>
+  </div>
+</div>
+
+<div>
+  <div v-click class="p-3 rounded-lg bg-slate-100 mb-2">
+    <span class="font-bold text-slate-700">AI</span>
+    <p class="mt-1">"Recorded. Q2: How often unable to stop worrying?"</p>
+  </div>
+  <div v-click class="p-3 rounded-lg bg-emerald-50">
+    <span class="font-bold text-emerald-700">AI (final)</span>
+    <p class="mt-1">"GAD-7 total: 10 (moderate). Recommendations: relaxation, exercise, or professional consult."</p>
+  </div>
+</div>
+
+</div>
+
+---
+layout: end
+class: text-center thank-you-slide
+---
+
+<div class="flex flex-col items-center justify-center h-full">
+  <h1 class="text-4xl font-bold mb-4">Thank You!</h1>
+  <p class="text-xl">Questions?</p>
+</div>
+
+<style>
+.slidev-layout.thank-you-slide { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%) !important; }
+.slidev-layout.thank-you-slide h1,
+.slidev-layout.thank-you-slide p { color: #fff !important; text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+</style>
