@@ -62,7 +62,7 @@ class: px-12
 </div>
 
 ---
-layout: section-title
+layout: center
 class: px-12
 ---
 
