@@ -62,32 +62,128 @@ class: px-12
 </div>
 
 ---
-layout: default
+layout: section-title
 class: px-12
 ---
 
 # System Architecture
 
-<p class="text-slate-600 mb-6">Three-layer design: dialogue handles conversation, scoring maps answers to GAD-7 scale, reporting produces actionable output.</p>
+---
+layout: default
+class: px-12
+---
 
-<div class="grid grid-cols-3 gap-6 mt-6">
+# Layer 1: Dialogue - Interaction Engine
 
-<div v-click class="slide-card p-6 rounded-xl bg-gradient-to-b from-blue-50 to-blue-100/50 border-l-4 border-blue-500 shadow-sm min-h-56 flex flex-col justify-center">
-  <h3 class="text-lg font-bold text-blue-900 mb-3">Layer 1: Dialogue</h3>
-  <p class="text-base text-blue-800 mb-2">Natural language interaction; fine-tuned LLM asks one question at a time.</p>
-  <p class="text-sm text-blue-700/90">Handles greetings, context, and conversational flow. Reduces user burden vs. paper forms.</p>
+<p class="text-slate-600 mb-6">Focuses on natural, empathetic engagement. We transform a rigid clinical form into a supportive conversation using state-of-the-art LLM orchestration.</p>
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div v-click class="slide-card p-6 rounded-xl border border-blue-200 bg-white shadow-md">
+  <h3 class="text-xl font-bold text-blue-800 mb-4 border-b pb-2">Dialogue Logic</h3>
+  <ul class="space-y-3 text-sm text-gray-700">
+    <li><strong>Stateful Conversation:</strong> One question at a time to prevent cognitive overload.</li>
+    <li><strong>Empathy Tuning:</strong> SFT (Supervised Fine-Tuning) on counseling scripts for supportive tone.</li>
+    <li><strong>Context Awareness:</strong> Handles interjections (e.g., "I'm not sure...") without losing place.</li>
+  </ul>
 </div>
 
-<div v-click class="slide-card p-6 rounded-xl bg-gradient-to-b from-indigo-50 to-indigo-100/50 border-l-4 border-indigo-500 shadow-sm min-h-56 flex flex-col justify-center">
-  <h3 class="text-lg font-bold text-indigo-900 mb-3">Layer 2: Scoring</h3>
-  <p class="text-base text-indigo-800 mb-2">Understand response → Map 0-3 → Clarify when needed.</p>
-  <p class="text-sm text-indigo-700/90">Interpret "several days" as 1, "more than half" as 2, etc. Calls clarify_response() on vague answers.</p>
+<div v-click class="slide-card p-6 rounded-xl border border-blue-200 bg-blue-50 shadow-md">
+  <h3 class="text-xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">Tech Stack</h3>
+  <div class="space-y-4">
+    <div class="flex items-start gap-3">
+      <div class="bg-blue-500 text-white px-2 py-1 rounded text-xs font-mono">LLM</div>
+      <p class="text-xs">GPT-4o / Llama-3-70B (SFT optimized for psychological safety)</p>
+    </div>
+    <div class="flex items-start gap-3">
+      <div class="bg-blue-500 text-white px-2 py-1 rounded text-xs font-mono">Flow</div>
+      <p class="text-xs">LangGraph for complex state-machine dialogue management</p>
+    </div>
+    <div class="flex items-start gap-3">
+      <div class="bg-blue-500 text-white px-2 py-1 rounded text-xs font-mono">Real-time</div>
+      <p class="text-xs">WebSocket + Redis for low-latency streaming responses</p>
+    </div>
+  </div>
 </div>
 
-<div v-click class="slide-card p-6 rounded-xl bg-gradient-to-b from-violet-50 to-violet-100/50 border-l-4 border-violet-500 shadow-sm min-h-56 flex flex-col justify-center">
-  <h3 class="text-lg font-bold text-violet-900 mb-3">Layer 3: Reporting</h3>
-  <p class="text-base text-violet-800 mb-2">Aggregate scores → Diagnosis → Recommendations & referral.</p>
-  <p class="text-sm text-violet-700/90">Total 0–21; bands: minimal (0–4), mild (5–9), moderate (10–14), severe (15–21).</p>
+</div>
+
+---
+layout: default
+class: px-12
+---
+
+# Layer 2: Scoring - Precision Mapping
+
+<p class="text-slate-600 mb-6">The "Brain" of the system. It bridges the gap between vague human expressions and strict GAD-7 clinical scoring (0–3 scale).</p>
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div v-click class="slide-card p-6 rounded-xl border border-indigo-200 bg-white shadow-md">
+  <h3 class="text-xl font-bold text-indigo-800 mb-4 border-b pb-2">Intelligence Logic</h3>
+  <ul class="space-y-3 text-sm text-gray-700">
+    <li><strong>Semantic Alignment:</strong> Maps "a few times" to 1, "constantly" to 3.</li>
+    <li><strong>Active Clarification:</strong> Triggers follow-up if user says "it varies" or "maybe."</li>
+    <li><strong>Structure Enforcement:</strong> Forces the model to output valid tool calls only.</li>
+  </ul>
+</div>
+
+<div v-click class="slide-card p-6 rounded-xl border border-indigo-200 bg-indigo-50 shadow-md">
+  <h3 class="text-xl font-bold text-indigo-900 mb-4 border-b border-indigo-200 pb-2">Tech Stack</h3>
+  <div class="space-y-4">
+    <div class="flex items-start gap-3">
+      <div class="bg-indigo-500 text-white px-2 py-1 rounded text-xs font-mono">Reasoning</div>
+      <p class="text-xs">Function Calling (Tool Use) to extract <code>record_score()</code></p>
+    </div>
+    <div class="flex items-start gap-3">
+      <div class="bg-indigo-500 text-white px-2 py-1 rounded text-xs font-mono">Prompting</div>
+      <p class="text-xs">Few-Shot Chain-of-Thought (CoT) for scoring consistency</p>
+    </div>
+    <div class="flex items-start gap-3">
+      <div class="bg-indigo-500 text-white px-2 py-1 rounded text-xs font-mono">Validation</div>
+      <p class="text-xs">Pydantic for strict schema and integer range (0-3) verification</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: default
+class: px-12
+---
+
+# Layer 3: Reporting - Security & Insights
+
+<p class="text-slate-600 mb-6">The final stage translates scores into actionable reports while maintaining the highest standards of data privacy and clinical validity.</p>
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div v-click class="slide-card p-6 rounded-xl border border-violet-200 bg-white shadow-md">
+  <h3 class="text-xl font-bold text-violet-800 mb-4 border-b pb-2">Output Logic</h3>
+  <ul class="space-y-3 text-sm text-gray-700">
+    <li><strong>Clinical Triage:</strong> Automated severity banding (0-21 score range).</li>
+    <li><strong>Dynamic Referral:</strong> Tailored advice based on local resource databases.</li>
+    <li><strong>Secure Delivery:</strong> Direct push to clinician dashboards or encrypted PDFs.</li>
+  </ul>
+</div>
+
+<div v-click class="slide-card p-6 rounded-xl border border-violet-200 bg-violet-50 shadow-md">
+  <h3 class="text-xl font-bold text-violet-900 mb-4 border-b border-violet-200 pb-2">Tech Stack</h3>
+  <div class="space-y-4">
+    <div class="flex items-start gap-3">
+      <div class="bg-violet-500 text-white px-2 py-1 rounded text-xs font-mono">API Layer</div>
+      <p class="text-xs">FastAPI (Python) for high-performance async processing</p>
+    </div>
+    <div class="flex items-start gap-3">
+      <div class="bg-violet-500 text-white px-2 py-1 rounded text-xs font-mono">Storage</div>
+      <p class="text-xs">PostgreSQL with AES-256 encryption (HIPAA-compliant design)</p>
+    </div>
+    <div class="flex items-start gap-3">
+      <div class="bg-violet-500 text-white px-2 py-1 rounded text-xs font-mono">Export</div>
+      <p class="text-xs">ReportLab / WeasyPrint for automated PDF generation</p>
+    </div>
+  </div>
 </div>
 
 </div>
