@@ -62,22 +62,77 @@ class: px-12
 </div>
 
 ---
-layout: center
+layout: default
 class: px-12
 ---
 
 # 系统架构
 
-<p class="text-lg text-slate-600 mt-4 max-w-3xl mx-auto">对话交互 → GAD-7 分值映射 → 报告输出。<span class="text-slate-400">（短讲版本省略各层实现细节。）</span></p>
+<p class="text-slate-600 mb-5 text-sm leading-relaxed">整体流程：<strong>对话交互</strong> → <strong>GAD-7 单项分值映射</strong> → <strong>报告与分流建议</strong>。以下三层在工程上解耦，便于分别迭代模型、规则与合规策略。</p>
+
+<div class="grid grid-cols-3 gap-5 mt-2 text-sm">
+
+<div v-click class="slide-card p-5 rounded-xl border border-blue-200 bg-gradient-to-b from-blue-50/80 to-white shadow-md">
+  <h3 class="text-base font-bold text-blue-900 mb-2 pb-2 border-b border-blue-200">第一层：对话与交互</h3>
+  <ul class="space-y-2 text-slate-700 leading-snug">
+    <li><strong>状态化多轮：</strong>一次只问一题，降低认知负担，支持插话与续接上下文。</li>
+    <li><strong>语气与安全：</strong>基于心理咨询语料的微调（SFT），保持支持性、非评判表述。</li>
+    <li><strong>工程栈：</strong>大语言模型 + 对话状态机（如 LangGraph），流式输出降低等待感。</li>
+  </ul>
+</div>
+
+<div v-click class="slide-card p-5 rounded-xl border border-indigo-200 bg-gradient-to-b from-indigo-50/80 to-white shadow-md">
+  <h3 class="text-base font-bold text-indigo-900 mb-2 pb-2 border-b border-indigo-200">第二层：计分与对齐</h3>
+  <ul class="space-y-2 text-slate-700 leading-snug">
+    <li><strong>语义对齐：</strong>将「好几天」「几乎每天」等自然语言稳定映射到临床 <strong>0–3</strong> 分档。</li>
+    <li><strong>主动澄清：</strong>回答模糊时追问，直至可落到合法分值或明确弃权。</li>
+    <li><strong>结构化输出：</strong>函数调用 / 工具调用抽取分值，Schema 校验（如 Pydantic）防止越界。</li>
+  </ul>
+</div>
+
+<div v-click class="slide-card p-5 rounded-xl border border-violet-200 bg-gradient-to-b from-violet-50/80 to-white shadow-md">
+  <h3 class="text-base font-bold text-violet-900 mb-2 pb-2 border-b border-violet-200">第三层：报告与交付</h3>
+  <ul class="space-y-2 text-slate-700 leading-snug">
+    <li><strong>临床分流：</strong>按 GAD-7 总分（0–21）划分严重度区间，匹配相应建议话术。</li>
+    <li><strong>行动建议：</strong>自助策略、随访或转介提示可按机构资源库配置。</li>
+    <li><strong>安全交付：</strong>API 汇总结果；可对接工作台或加密导出的 PDF（依部署环境而定）。</li>
+  </ul>
+</div>
+
+</div>
 
 ---
 layout: default
 class: px-12
 ---
 
-# 训练数据（概览）
+# 训练数据构建
 
-<p class="text-slate-600 mb-6">用于微调的有标签样本来自人工标注：每条样本包含临床量表定义的 <strong>GAD-7 单项得分</strong>（<strong>0–3</strong> 分档），以及标注员的 <strong>置信度</strong>。严重度与置信度共同刻画每条训练样本——本场无需展开完整数据流水线。</p>
+<p class="text-slate-600 mb-4 text-sm leading-relaxed">监督微调需要「用户自然语言表述 ↔ GAD-7 合规分值」成对样本。我们采用 <strong>生成 + 人工标注</strong> 两阶段：先扩大表述多样性，再用标注一致性筛选高质量子集。每条标注同时记录 <strong>分值（0–3）</strong> 与 <strong>置信度</strong>，用于训练与分析歧义。</p>
+
+<div class="grid grid-cols-2 gap-6 mt-2">
+
+<div v-click class="slide-card p-5 rounded-xl border-l-4 border-amber-500 bg-amber-50/60 shadow-sm">
+  <h4 class="text-base font-bold text-amber-950 mb-3">阶段一：模型生成候选表述</h4>
+  <ul class="text-slate-800 space-y-2 text-sm leading-relaxed">
+    <li>按 7 个 GAD-7 题项分别生成多种口语化回答（不同强度与措辞）。</li>
+    <li>规模示例：约 <strong>700</strong> 条候选（7 题 × 每题约 100 条），覆盖各分档以利类别平衡。</li>
+    <li>输出为纯文本答复，进入人工打标环节。</li>
+  </ul>
+</div>
+
+<div v-click class="slide-card p-5 rounded-xl border-l-4 border-amber-500 bg-amber-50/60 shadow-sm">
+  <h4 class="text-base font-bold text-amber-950 mb-3">阶段二：人工标注与质控</h4>
+  <ul class="text-slate-800 space-y-2 text-sm leading-relaxed">
+    <li>多人独立标注：每条样本标注 <strong>GAD-7 单项分值（0–3）</strong> + <strong>置信度</strong>（如高 / 中 / 低）。</li>
+    <li>质量控制：经一致性审核与质控流程筛选后，合格样本纳入训练集。</li>
+    <li>质控后有效样本约 <strong>650–680</strong> 条，用于微调与评测分析。</li>
+  </ul>
+</div>
+
+</div>
+
+<p v-click class="mt-4 text-xs text-slate-500 leading-relaxed">说明：<strong>严重度</strong>由 0–3 分值体现；<strong>置信度</strong>反映标注员对该句应属分档的把握，可用于难例挖掘或与模型不确定度对照。</p>
 
 ---
 layout: default
