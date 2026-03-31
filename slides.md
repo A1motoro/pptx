@@ -139,7 +139,7 @@ layout: default
 class: px-12
 ---
 
-# 示例（可选——时间紧可跳过）
+# 示例
 
 <p class="text-slate-500 text-sm mb-4">约 30 秒：用户例如回答「好几天」→ 映射为分值 1 → 七题完成后给出总分与简要建议。</p>
 
