@@ -1,0 +1,832 @@
+/* ============================================================
+   Linear-inspired dark theme — 与产品 UI 风格对齐
+   全局样式，自动被 Slidev 加载
+   ============================================================ */
+
+:root {
+  --bg-marketing: #08090a;
+  --bg-panel:     #0f1011;
+  --bg-surface:   #191a1b;
+  --bg-elevated:  #28282c;
+
+  --text-primary:    #f7f8f8;
+  --text-secondary:  #d0d6e0;
+  --text-tertiary:   #8a8f98;
+  --text-quaternary: #62666d;
+
+  --brand-indigo: #5e6ad2;
+  --brand-violet: #7170ff;
+  --brand-hover:  #828fff;
+
+  --border-subtle:   rgba(255, 255, 255, 0.05);
+  --border-standard: rgba(255, 255, 255, 0.08);
+}
+
+/* 整个 Slidev 容器深色 */
+html,
+body,
+#app,
+.slidev-page,
+.slidev-page-root,
+.slidev-layout {
+  background: var(--bg-marketing);
+}
+
+.slidev-layout {
+  color: var(--text-primary);
+  font-family: 'Inter', 'SF Pro Display', -apple-system, system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: "cv01", "ss03";
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.slidev-layout h1 {
+  color: var(--text-primary);
+  font-weight: 510;
+  letter-spacing: -0.04em;
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+}
+
+/* two-cols 布局下 h1 缩小避免换行 */
+.slidev-layout.slidev-layout-two-cols h1,
+.data-page h1,
+.prompt-page h1,
+.eval-page h1 {
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.slidev-layout h2 {
+  color: var(--text-primary);
+  font-weight: 510;
+  letter-spacing: -0.024em;
+  font-size: 1.6rem;
+}
+
+.slidev-layout h3 {
+  color: var(--text-primary);
+  font-weight: 590;
+  letter-spacing: -0.012em;
+  font-size: 1.15rem;
+}
+
+.slidev-layout p,
+.slidev-layout li {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.slidev-layout a {
+  color: var(--brand-violet);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(113, 112, 255, 0.4);
+}
+
+.slidev-layout a:hover {
+  color: var(--brand-hover);
+  border-bottom-color: var(--brand-hover);
+}
+
+.slidev-layout strong {
+  color: var(--text-primary);
+  font-weight: 590;
+}
+
+.slidev-layout code {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-standard);
+  border-radius: 4px;
+  padding: 0 6px;
+  font-family: 'JetBrains Mono', 'Berkeley Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.85em;
+  color: var(--text-primary);
+}
+
+.slidev-layout pre {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+}
+
+.slidev-layout table {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+
+.slidev-layout th,
+.slidev-layout td {
+  border: 1px solid var(--border-standard);
+  padding: 6px 12px;
+  color: var(--text-secondary);
+}
+
+.slidev-layout th {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  font-weight: 510;
+}
+
+.slidev-layout hr {
+  border: none;
+  border-top: 1px solid var(--border-standard);
+}
+
+.muted { color: var(--text-tertiary); font-weight: 400; }
+.dim   { color: var(--text-quaternary); font-size: 0.85em; }
+.accent { color: var(--brand-violet) !important; }
+.mono  { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.92em; }
+
+.pill {
+  display: inline-block;
+  padding: 2px 10px;
+  margin: 0 2px;
+  border-radius: 9999px;
+  border: 1px solid #23252a;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 510;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   Cover & End pages
+   ============================================================ */
+
+.slidev-layout.cover-page,
+.slidev-layout.end-page {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 5rem !important;
+  background: var(--bg-marketing) !important;
+}
+
+.cover-page h1 {
+  font-size: 4.2rem !important;
+  font-weight: 510;
+  letter-spacing: -0.066em;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+  color: var(--text-primary);
+}
+
+.cover-page .subtitle {
+  font-size: 1.25rem;
+  color: var(--text-tertiary);
+  margin-bottom: 3rem;
+  letter-spacing: -0.011em;
+}
+
+.cover-page .cover-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--border-standard);
+  border-bottom: 1px solid var(--border-standard);
+  margin-bottom: 2rem;
+}
+
+.cover-page .cover-meta > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cover-page .cover-meta .label {
+  color: var(--text-quaternary);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 510;
+}
+
+.cover-page .cover-meta .value {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  letter-spacing: -0.01em;
+}
+
+.cover-page .cover-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ============================================================
+   Outline page
+   ============================================================ */
+
+.outline-page .outline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.outline-page .outline-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  position: relative;
+}
+
+.outline-page .outline-card .num {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--brand-violet);
+  font-size: 0.8rem;
+  font-weight: 510;
+  letter-spacing: 0.05em;
+}
+
+.outline-page .outline-card .title {
+  font-size: 1.4rem;
+  font-weight: 510;
+  letter-spacing: -0.022em;
+  margin: 4px 0;
+  color: var(--text-primary);
+}
+
+.outline-page .outline-card .desc {
+  color: var(--text-tertiary);
+  font-size: 0.88rem;
+}
+
+.outline-page .outline-card .score {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 1px 8px;
+  border-radius: 4px;
+}
+
+.outline-page .outline-foot {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ============================================================
+   Intro page
+   ============================================================ */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.5rem;
+}
+
+.intro-block {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+}
+
+.intro-block .block-title,
+.eval-block .block-title,
+.prompt-block .block-title,
+.ft-block .block-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 590;
+  margin-bottom: 0.6rem;
+}
+
+.intro-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.intro-block li {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+/* ============================================================
+   Architecture page
+   ============================================================ */
+
+.arch-page {
+  padding: 1.5rem 2rem !important;
+}
+
+.arch-page h1 {
+  margin-bottom: 0.6rem;
+}
+
+.arch-note {
+  margin-top: 0.5rem;
+  padding: 0.7rem 1rem;
+  background: rgba(94, 106, 210, 0.06);
+  border: 1px solid rgba(94, 106, 210, 0.25);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   Data page
+   ============================================================ */
+
+.data-stat {
+  background: rgba(94, 106, 210, 0.08);
+  border: 1px solid rgba(94, 106, 210, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.data-stat .stat-num {
+  font-size: 2.2rem;
+  font-weight: 510;
+  letter-spacing: -0.04em;
+  color: var(--brand-violet);
+  line-height: 1;
+}
+
+.data-stat .stat-desc {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+.data-page ul li {
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+}
+
+.dist-box,
+.annot-sample,
+.json-demo,
+.eval-flow,
+.lora-foot,
+.team-note,
+.scoring-text .rule-box,
+.scoring-mermaid {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.dist-title,
+.sample-title,
+.json-title,
+.flow-title {
+  color: var(--text-tertiary);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 590;
+  margin-bottom: 0.5rem;
+}
+
+.dist-box pre {
+  font-size: 0.7rem !important;
+  line-height: 1.5;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.annot-sample pre,
+.json-demo pre {
+  font-size: 0.7rem !important;
+  margin: 0.4rem 0 0 !important;
+}
+
+/* ============================================================
+   Prompt page
+   ============================================================ */
+
+.prompt-page .prompt-block {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.prompt-page .prompt-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 590;
+}
+
+.prompt-page .prompt-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  margin: 4px 0 6px;
+}
+
+.prompt-page ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.prompt-page li {
+  font-size: 0.78rem;
+  margin-bottom: 2px;
+}
+
+.prompt-foot {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  padding: 0.5rem 0.8rem;
+  border-left: 2px solid var(--brand-violet);
+  background: rgba(113, 112, 255, 0.05);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ============================================================
+   LoRA page
+   ============================================================ */
+
+.lora-page .lora-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.lora-page .lora-col {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+
+.lora-page .col-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 590;
+  margin-bottom: 0.7rem;
+}
+
+.lora-page ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.lora-page li {
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+}
+
+.lora-page table {
+  width: 100%;
+  font-size: 0.78rem;
+}
+
+.lora-page td,
+.lora-page th {
+  padding: 4px 8px;
+}
+
+.lora-foot {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+/* ============================================================
+   Scoring page
+   ============================================================ */
+
+.scoring-page .scoring-flex {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.scoring-page .rule-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 590;
+  margin-bottom: 0.5rem;
+}
+
+.scoring-page ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.scoring-page li {
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+}
+
+/* ============================================================
+   Eval page
+   ============================================================ */
+
+.eval-page .eval-block {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.eval-page ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.eval-page li {
+  font-size: 0.82rem;
+  margin-bottom: 3px;
+}
+
+.eval-page table {
+  font-size: 0.78rem;
+  width: 100%;
+}
+
+.eval-page table th,
+.eval-page table td {
+  padding: 4px 8px;
+}
+
+.eval-foot {
+  font-size: 0.82rem;
+  margin-top: 0.4rem;
+}
+
+/* ============================================================
+   Highlights page
+   ============================================================ */
+
+.highlights-page .hl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.highlights-page .hl-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 12px;
+  padding: 1.2rem 1.3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlights-page .hl-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.highlights-page .hl-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.3rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-quaternary);
+  letter-spacing: 0.05em;
+}
+
+.highlights-page .hl-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.highlights-page .hl-title {
+  font-size: 1.1rem;
+  font-weight: 510;
+  letter-spacing: -0.018em;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.highlights-page .hl-body {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.highlights-page .hl-tag {
+  margin-top: 0.8rem;
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #27a644;
+  font-size: 0.7rem;
+  font-weight: 510;
+  align-self: flex-start;
+}
+
+.hl-foot {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.7rem;
+  background: rgba(113, 112, 255, 0.05);
+  border: 1px dashed rgba(113, 112, 255, 0.3);
+  border-radius: 6px;
+}
+
+/* ============================================================
+   Demo iframe page — 全屏
+   ============================================================ */
+
+.slidev-layout.demo-iframe-page,
+.slidev-layout.iframe {
+  padding: 0 !important;
+  background: var(--bg-marketing) !important;
+}
+
+.slidev-layout.demo-iframe-page iframe,
+.slidev-layout.iframe iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ============================================================
+   Discussion page
+   ============================================================ */
+
+.discussion-page .disc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.discussion-page .disc-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+
+.discussion-page .disc-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-quaternary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.discussion-page .disc-title {
+  font-size: 1.05rem;
+  font-weight: 510;
+  letter-spacing: -0.018em;
+  margin: 4px 0 0.6rem;
+}
+
+.discussion-page .disc-body {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.discussion-page .disc-body p {
+  font-size: 0.78rem;
+  margin: 0 0 0.4rem;
+}
+
+.discussion-page .disc-body ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.discussion-page .disc-body li {
+  font-size: 0.78rem;
+  margin-bottom: 3px;
+}
+
+/* ============================================================
+   Future + Team page
+   ============================================================ */
+
+.future-team-page .ft-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.future-team-page .ft-block {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+}
+
+.future-team-page ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.future-team-page li {
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+.future-team-page table {
+  font-size: 0.78rem;
+  width: 100%;
+}
+
+.future-team-page table th,
+.future-team-page table td {
+  padding: 4px 8px;
+}
+
+.team-note {
+  margin-top: 0.7rem;
+  font-size: 0.75rem;
+  color: var(--text-quaternary);
+  font-style: italic;
+}
+
+/* ============================================================
+   End page
+   ============================================================ */
+
+.end-page .end-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.end-page .end-title {
+  font-size: 5rem;
+  font-weight: 510;
+  letter-spacing: -0.066em;
+  line-height: 1;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.end-page .end-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+}
+
+.end-page .meta-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-standard);
+  border-radius: 6px;
+}
+
+.end-page .meta-label {
+  font-size: 0.75rem;
+  color: var(--text-quaternary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 510;
+  align-self: center;
+}
+
+.end-page .meta-value {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.01em;
+}
+
+.end-page .end-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}

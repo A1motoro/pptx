@@ -1,166 +1,627 @@
 ---
 theme: default
+title: GAD-7 AI-Assisted Assessment
+info: |
+  AIE1902 Psychology Project Report: A conversational GAD-7 anxiety screening system based on GLM-5 + LoRA fine-tuning
+colorSchema: dark
+themeConfig:
+  primary: '#5e6ad2'
+transition: fade-out
+mdc: true
 layout: cover
-class: text-center cover-gradient
+class: cover-page
 ---
 
-<div class="cover-content">
-<h1>基于 AI 的心理评估系统</h1>
-<h2>GAD-7 自动化评分测评</h2>
-<p class="cover-subtitle">用自然语言对话简化焦虑筛查流程</p>
+# GAD-7 <span class="accent">AI</span>-Assisted Assessment
+
+<div class="subtitle">A Conversational Anxiety Screening System Powered by GLM-5 + LoRA Fine-Tuning</div>
+
+<div class="cover-meta">
+  <div><span class="label">Course</span><span class="value">AIE1902 · Psychology</span></div>
+  <div><span class="label">Type</span><span class="value">Project Report · 25 Points</span></div>
+  <div><span class="label">Demo Site</span><span class="value">SeetaCloud · Port 8443</span></div>
 </div>
 
-<style>
-.slidev-layout.cover-gradient { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #4a90c4 100%) !important; }
-.cover-content h1 { color: #fff; font-weight: 700; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0,0,0,0.2); }
-.cover-content h2 { color: rgba(255,255,255,0.9); font-weight: 400; margin-top: 0.5em; }
-.cover-subtitle { color: rgba(255,255,255,0.8); font-size: 1rem; margin-top: 1.5em; font-weight: 400; }
-.slide-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.slide-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
-.problem-item::before { content: "•"; color: #dc2626; font-weight: bold; margin-right: 0.5em; }
-.goal-item::before { content: "•"; color: #059669; font-weight: bold; margin-right: 0.5em; }
-</style>
+<div class="cover-foot">
+  <span class="pill">GLM-5</span>
+  <span class="pill">LoRA</span>
+  <span class="pill">Dual-Agent</span>
+  <span class="pill">FastAPI</span>
+  <span class="pill">React</span>
+  <span class="pill">SSE</span>
+</div>
+
+<!--
+Opening (30s): One-line positioning.
+We replace rigid forms with natural dialogue, so GAD-7 screening feels like a real conversation.
+-->
 
 ---
 layout: default
-class: px-12
+class: outline-page
 ---
 
-# 问题与目标
+# Outline <span class="muted">/ Scoring-Aligned Structure</span>
 
-<p class="text-slate-600 mb-6">GAD-7 是广泛使用的 7 题焦虑筛查量表。传统纸质或由人工主导的测评在学校、诊所等场景容易形成瓶颈。</p>
+<div class="outline-grid">
 
-<div class="grid grid-cols-2 gap-8 mt-6">
-
-<div v-click class="slide-card p-6 rounded-xl border border-red-200 bg-gradient-to-br from-red-50 to-white shadow-md min-h-48">
-  <h3 class="text-xl font-semibold text-red-800 mb-4 pb-3 border-b-2 border-red-200">问题</h3>
-  <ul class="space-y-3 text-base text-gray-700">
-    <li class="problem-item">传统测评单次约需 15–20 分钟</li>
-    <li class="problem-item">依赖人工计分，易产生差错</li>
-    <li class="problem-item">难以支撑大规模部署</li>
-  </ul>
+<div class="outline-card">
+  <div class="num">01</div>
+  <div class="title">Introduction</div>
+  <div class="desc">Mental-health context and project positioning</div>
+  <div class="score">2 pts</div>
 </div>
 
-<div v-click class="slide-card p-6 rounded-xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white shadow-md min-h-48">
-  <h3 class="text-xl font-semibold text-emerald-800 mb-4 pb-3 border-b-2 border-emerald-200">目标</h3>
-  <ul class="space-y-3 text-base text-gray-700">
-    <li class="goal-item">构建自动化的 AI 测评系统</li>
-    <li class="goal-item">支持自然语言多轮对话交互</li>
-    <li class="goal-item">实现自动计分与报告生成</li>
-  </ul>
+<div class="outline-card">
+  <div class="num">02</div>
+  <div class="title">Methods</div>
+  <div class="desc">Architecture · Data · Prompting · LoRA · Scoring · Evaluation</div>
+  <div class="score">5 pts</div>
+</div>
+
+<div class="outline-card">
+  <div class="num">03</div>
+  <div class="title">LLM Demonstration</div>
+  <div class="desc">Three key highlights + live real-time demo</div>
+  <div class="score">5 pts</div>
+</div>
+
+<div class="outline-card">
+  <div class="num">04</div>
+  <div class="title">Discussion</div>
+  <div class="desc">Challenges · Lessons learned · Future work</div>
+  <div class="score">2 pts</div>
 </div>
 
 </div>
 
-<div v-click class="mt-6 p-6 rounded-xl bg-gradient-to-r from-slate-100 to-slate-50 border border-slate-200 shadow-sm">
-  <h3 class="text-lg font-semibold text-slate-800 mb-4">预期效果</h3>
-  <div class="grid grid-cols-3 gap-4 text-base">
-    <div class="p-4 rounded-lg bg-white/80"><span class="font-semibold">时长：</span>单次测评由约 20 分钟缩短至 5–8 分钟</div>
-    <div class="p-4 rounded-lg bg-white/80"><span class="font-semibold">准确性：</span>计分严格符合 GAD-7 规范</div>
-    <div class="p-4 rounded-lg bg-white/80"><span class="font-semibold">规模：</span>可支撑大样本（如全校筛查）</div>
+<div class="outline-foot">
+  Presentation Delivery 2 · Teamwork 2 · Peer Popularity 8 <span class="dim">— Total 25 pts</span>
+</div>
+
+---
+layout: default
+---
+
+# 01 · Introduction <span class="muted">/ Problem We Solve</span>
+
+<div class="intro-grid">
+
+<div class="intro-block">
+<div class="block-title accent">Background</div>
+
+- **GAD-7** (Generalized Anxiety Disorder 7-item scale) is a widely used anxiety screening instrument
+- Traditional form-based UX captures checkboxes, but often misses context and emotional nuance
+- Users frequently answer with ambiguous phrases ("kind of", "often", "hard to say"), which forms cannot clarify
+
+</div>
+
+<div class="intro-block">
+<div class="block-title accent">Goal</div>
+
+Use LLM-based **natural conversation** instead of rigid forms:
+- complete all 7 items through supportive dialogue
+- collect **frequency**, not diagnosis
+- **map responses to 0-3** with explainable evidence
+- keep clear boundaries: **screening only**, never diagnosis
+
+</div>
+
+<div class="intro-block">
+<div class="block-title accent">Delivery</div>
+
+- **Web app with frontend-backend separation** (already deployed on SeetaCloud)
+- users answer fully in natural language
+- backend produces real-time questionnaire snapshots and structured reports
+
+</div>
+
+<div class="intro-block">
+<div class="block-title accent">Non-goals</div>
+
+- not a replacement for clinical diagnosis
+- not a psychotherapy engine
+- no collection of personally identifiable information
+
+</div>
+
+</div>
+
+---
+layout: default
+class: arch-page
+---
+
+# 02 · Methods · System Architecture <span class="muted">/ Dual-AI Collaboration</span>
+
+```mermaid {scale: 0.65}
+flowchart LR
+    U[User<br/>Natural language]:::user --> FE[React Frontend<br/>SSE streaming UI]:::fe
+    FE --> API[FastAPI<br/>Session orchestration]:::api
+    API --> ORC[Orchestrator<br/>State machine]:::orc
+    ORC --> A1[Dialogue AI<br/>Empathetic guidance]:::ai1
+    ORC --> A2[Scoring AI<br/>JSON sidecar]:::ai2
+    A1 --> P[Provider Adapter Layer]:::prov
+    A2 --> P
+    P -.LoRA.-> LLM[GLM-5<br/>+ LoRA]:::llm
+    A2 --> SC[Scoring Engine<br/>tau-threshold locking]:::score
+    SC --> ST[(SQLite)]:::db
+    ST -.-> FE
+
+    classDef user fill:#0f1011,stroke:#5e6ad2,color:#f7f8f8,stroke-width:2px
+    classDef fe fill:#191a1b,stroke:#7170ff,color:#f7f8f8
+    classDef api fill:#191a1b,stroke:#7170ff,color:#f7f8f8
+    classDef orc fill:#191a1b,stroke:#7170ff,color:#f7f8f8
+    classDef ai1 fill:#1a1b2e,stroke:#5e6ad2,color:#f7f8f8,stroke-width:2px
+    classDef ai2 fill:#2e1a2b,stroke:#a35eff,color:#f7f8f8,stroke-width:2px
+    classDef prov fill:#191a1b,stroke:#62666d,color:#d0d6e0
+    classDef llm fill:#0f1011,stroke:#5e6ad2,color:#f7f8f8
+    classDef score fill:#1a2e1f,stroke:#10b981,color:#f7f8f8
+    classDef db fill:#0f1011,stroke:#62666d,color:#8a8f98
+```
+
+<div class="arch-note">
+<span class="accent">Core idea</span>: dialogue generation and scoring are <strong>fully decoupled</strong>. Conversational quality does not contaminate scores, and scoring logic does not constrain response tone. Routing is controlled by <span class="mono">model_id</span> through a provider adapter layer.
+</div>
+
+---
+layout: two-cols
+class: data-page
+---
+
+# 02 · Methods · Dataset <span class="muted">/ In-house Annotation</span>
+
+<div class="data-stat">
+  <div class="stat-num">~700</div>
+  <div class="stat-desc">human-annotated samples</div>
+</div>
+
+- **Source**: repository files `anotated/1.json` to `anotated/7.json`
+- **Coverage**: all GAD-7 items, Q1-Q7
+- **Fields per sample**:
+  - `instruction` (item prompt)
+  - `input` (user response)
+  - `annotator_score` (0/1/2/3)
+  - `annotator_confidence` (1/2/3)
+
+::right::
+
+<div class="dist-box">
+<div class="dist-title">Score Distribution (Q1 Example)</div>
+
+```
+0 (Not at all)         ████████████████████  35%
+1 (Several days)       ████████████          22%
+2 (More than half)     ███████████████       28%
+3 (Nearly every day)   ████████              15%
+```
+
+</div>
+
+<div class="annot-sample">
+
+<div class="sample-title">Annotated Sample Examples</div>
+
+```json
+{ "input": "I felt tense or anxious almost every day.",
+  "annotator_score": "3", "annotator_confidence": "3" }
+```
+
+```json
+{ "input": "Maybe a little... hard to describe.",
+  "annotator_score": "1", "annotator_confidence": "1" }
+```
+
+</div>
+
+---
+layout: two-cols
+class: prompt-page
+---
+
+# 02 · Methods · Dual-Prompt Design
+
+<div class="prompt-block">
+<div class="prompt-tag accent">A · Dialogue AI</div>
+<div class="prompt-name">SYSTEM_INTERVIEWER_ZH</div>
+
+- supportive and concise, **never outputs JSON**
+- strict **Q1 → Q7 sequential progression**
+- asks follow-up for ambiguity without score-leading language
+- redirects off-topic requests back to the current item
+- safety handling: crisis intent triggers emergency protocol guidance
+
+</div>
+
+<div class="prompt-block">
+<div class="prompt-tag accent">B · Scoring AI</div>
+<div class="prompt-name">SYSTEM_EXTRACT_ZH</div>
+
+- **outputs JSON only**, hidden from users
+- maps each item to 0-3 plus `confidence` and `needs_clarification`
+- anchors: 0 not at all / 1 several days / 2 more than half / 3 nearly every day
+
+</div>
+
+::right::
+
+<div class="json-demo">
+
+<div class="json-title">Scoring AI Output Example</div>
+
+```json
+{
+  "current_focus": "Q3",
+  "items": {
+    "Q1": {"score":2,"confidence":0.91,"needs_clarification":false},
+    "Q2": {"score":2,"confidence":0.88,"needs_clarification":false},
+    "Q3": {"score":null,"confidence":0.42,
+           "needs_clarification":true,"brief_reason":"ambiguous"},
+    "Q4": {"score":null,"confidence":0.0,"needs_clarification":true}
+  },
+  "ready_for_summary": false,
+  "off_topic_redirected": false
+}
+```
+
+</div>
+
+<div class="prompt-foot">
+<span class="accent mono">decoupled</span> means the same user message is interpreted independently by two models, then reconciled by rules to avoid "free text = direct score" failure modes.
+</div>
+
+---
+layout: default
+class: lora-page
+---
+
+# 02 · Methods · LoRA Fine-Tuning <span class="muted">/ Core Project Highlight</span>
+
+<div class="lora-grid">
+
+<div class="lora-col">
+<div class="col-title accent">Why Fine-Tune</div>
+
+- vanilla GLM-5 tends to over-empathize and may skip explicit frequency alignment
+- inconsistent handling of ambiguous phrases across repeated runs
+- occasional malformed or incomplete JSON in extraction mode
+
+</div>
+
+<div class="lora-col">
+<div class="col-title accent">LoRA Setup</div>
+
+| Item | Setting |
+|---|---|
+| Base | GLM-5 |
+| Method | LoRA / QLoRA |
+| Data | In-house labeled dataset (~700) |
+| Objective | Frequency mapping + JSON format reliability |
+| Target model | Scoring AI (Extractor) |
+
+</div>
+
+<div class="lora-col">
+<div class="col-title accent">Observed Gains (Qualitative)</div>
+
+- **higher JSON validity** with fewer parsing failures
+- **more stable bucket mapping** for ambiguous responses
+- **better confidence alignment** with annotator confidence labels
+- no major inference latency increase (lightweight LoRA adapters)
+
+</div>
+
+</div>
+
+<div class="lora-foot">
+<span class="muted">Note: the Dialogue AI remains on base GLM-5, while only the <strong style="color:var(--text-secondary)">Scoring AI</strong> is LoRA-tuned. This keeps cost low and risk controlled.</span>
+</div>
+
+---
+layout: default
+class: scoring-page
+---
+
+# 02 · Methods · Scoring Engine <span class="muted">/ Focus-Item State Machine</span>
+
+<div class="scoring-flex">
+
+<div class="scoring-mermaid">
+
+```mermaid {scale: 0.55}
+stateDiagram-v2
+    [*] --> NotStarted
+    NotStarted --> Collecting: ask in Q1 to Q7 order
+    Collecting --> Candidate: Scoring AI outputs score + confidence
+    Candidate --> Locked: confidence >= tau_high
+    Candidate --> Clarify: tau_low <= confidence < tau_high
+    Candidate --> Collecting: confidence < tau_low
+    Clarify --> Collecting: neutral follow-up by Dialogue AI
+    Locked --> [*]: move to next item
+    note right of Clarify
+      Not locked.
+      Mark as
+      "needs clarification".
+    end note
+```
+
+</div>
+
+<div class="scoring-text">
+
+<div class="rule-box">
+<div class="rule-title accent">Key Rules</div>
+
+- **tau_high = 0.85** · **tau_low = 0.55**
+- **focus_only**: update only the first unfinished item to prevent one-shot filling of Q1-Q7
+- locked items are immutable unless `/rescore` is explicitly triggered
+- all seven locked -> `ready_for_summary = true`
+
+</div>
+
+<div class="rule-box">
+<div class="rule-title accent">Explainability</div>
+
+- each item stores `evidence_spans` (message-level references)
+- report page outputs per-item `rationale`
+- full pipeline is auditable and replayable
+
+</div>
+
+</div>
+
+</div>
+
+---
+layout: two-cols
+class: eval-page
+---
+
+# 02 · Methods · DeepEval Evaluation
+
+<div class="eval-block">
+<div class="block-title accent">Evaluation Framework</div>
+
+Built on **DeepEval**, a mainstream LLM evaluation toolkit.
+
+- unit-style test cases over dialogue samples
+- custom metric support
+- CI-integrated regression checks on model updates
+
+</div>
+
+<div class="eval-block">
+<div class="block-title accent">Primary Metrics</div>
+
+| Metric | Description |
+|---|---|
+| Item Accuracy | model score vs annotated ground truth |
+| Total Score MAE | average absolute error on summed GAD-7 scores |
+| JSON Validity | parseable output rate (before vs after LoRA) |
+| Ambiguity Trigger Rate | proportion flagged as `needs_clarification` |
+
+</div>
+
+::right::
+
+<div class="eval-flow">
+<div class="flow-title">Evaluation Pipeline</div>
+
+```mermaid {scale: 0.5}
+flowchart TB
+    D[Labeled dataset<br/>~700 samples]:::d --> S[Sampled test set]:::s
+    S --> M1[GLM-5 baseline]:::m
+    S --> M2[GLM-5 + LoRA]:::m
+    M1 --> E[DeepEval<br/>multi-metric comparison]:::e
+    M2 --> E
+    E --> R[Regression report + threshold calibration]:::r
+
+    classDef d fill:#0f1011,stroke:#5e6ad2,color:#f7f8f8
+    classDef s fill:#191a1b,stroke:#7170ff,color:#f7f8f8
+    classDef m fill:#1a1b2e,stroke:#5e6ad2,color:#f7f8f8
+    classDef e fill:#2e1a2b,stroke:#a35eff,color:#f7f8f8
+    classDef r fill:#1a2e1f,stroke:#10b981,color:#f7f8f8
+```
+
+</div>
+
+<div class="eval-foot">
+<span class="muted">Every LoRA checkpoint update must pass full regression before deployment.</span>
+</div>
+
+---
+layout: default
+class: highlights-page
+---
+
+# 03 · LLM Demonstration <span class="muted">/ Three Highlights</span>
+
+<div class="hl-grid">
+
+<div class="hl-card">
+  <div class="hl-num">01</div>
+  <div class="hl-icon">🎯</div>
+  <div class="hl-title">Domain LoRA Fine-Tuning</div>
+  <div class="hl-body">
+    We fine-tune GLM-5 with our in-house labels to improve frequency-to-score mapping and JSON output robustness specifically for the scoring model.
+  </div>
+  <div class="hl-tag">Methods Core</div>
+</div>
+
+<div class="hl-card">
+  <div class="hl-num">02</div>
+  <div class="hl-icon">🔀</div>
+  <div class="hl-title">Dual-AI Collaboration</div>
+  <div class="hl-body">
+    <strong>Dialogue AI</strong> handles empathy and interview flow; <strong>Scoring AI</strong> handles structured extraction. The two are fully decoupled and reconciled by orchestration rules.
+  </div>
+  <div class="hl-tag">Unique Design</div>
+</div>
+
+<div class="hl-card">
+  <div class="hl-num">03</div>
+  <div class="hl-icon">📋</div>
+  <div class="hl-title">JSON Sidecar + Threshold Locking</div>
+  <div class="hl-body">
+    Structured sidecar outputs combined with dual thresholds and focus-item state logic make scoring explainable, auditable, and resistant to vague-response contamination.
+  </div>
+  <div class="hl-tag">Engineering Highlight</div>
+</div>
+
+</div>
+
+<div class="hl-foot">
+<span class="accent">Next slide: live website demo with real-time questionnaire snapshot updates.</span>
+</div>
+
+---
+layout: iframe
+url: https://u878057-9275-7582ea09.bjb2.seetacloud.com:8443/
+class: demo-iframe-page
+---
+
+<!--
+Full-screen live demo slide:
+- open the production site and run a live conversation
+- focus on real-time snapshot updates in the side panel
+- suggested demo cases: mild (Q1=1), moderate (Q1=2), severe (Q1=3), and one ambiguous response
+- fallback: switch to backup screenshot if network is unstable
+- if iframe is blocked by X-Frame-Options/CSP, open the site in a new browser tab
+-->
+
+---
+layout: default
+class: discussion-page
+---
+
+# 04 · Discussion <span class="muted">/ Challenges and Lessons</span>
+
+<div class="disc-grid">
+
+<div class="disc-card">
+  <div class="disc-tag">Challenge 1</div>
+  <div class="disc-title accent">Boundary of Dual-AI Responsibilities</div>
+  <div class="disc-body">
+
+  **Problem**: early versions leaked scoring logic into conversational responses because ambiguity judgment was not fully isolated.
+
+  **Resolution**:
+  - Dialogue AI cannot access `score`; it only sees state hints like "Q3 needs clarification"
+  - Scoring AI does not rely on assistant text style; it reads user content and locked states
+  - Orchestrator remains the single source of truth
+
   </div>
 </div>
 
----
-layout: default
-class: px-12
----
+<div class="disc-card">
+  <div class="disc-tag">Challenge 2</div>
+  <div class="disc-title accent">Clarifying Ambiguous User Responses</div>
+  <div class="disc-body">
 
-# 系统架构
+  **Problem**: inputs like "kind of" or "often" can lead to premature low-confidence scoring.
 
-<p class="text-slate-600 mb-5 text-sm leading-relaxed">整体流程：<strong>对话交互</strong> → <strong>GAD-7 单项分值映射</strong> → <strong>报告与分流建议</strong>。以下三层在工程上解耦，便于分别迭代模型、规则与合规策略。</p>
+  **Resolution**:
+  - enforce `score=null` and `needs_clarification=true` for ambiguous phrases in extraction prompts
+  - require one neutral follow-up question from Dialogue AI to map to the four official buckets
+  - keep `_heuristic_score` keyword logic as a controlled fallback path
 
-<div class="grid grid-cols-3 gap-5 mt-2 text-sm">
-
-<div v-click class="slide-card p-5 rounded-xl border border-blue-200 bg-gradient-to-b from-blue-50/80 to-white shadow-md">
-  <h3 class="text-base font-bold text-blue-900 mb-2 pb-2 border-b border-blue-200">第一层：对话与交互</h3>
-  <ul class="space-y-2 text-slate-700 leading-snug">
-    <li><strong>状态化多轮：</strong>一次只问一题，降低认知负担，支持插话与续接上下文。</li>
-    <li><strong>语气与安全：</strong>基于心理咨询语料的微调（SFT），保持支持性、非评判表述。</li>
-    <li><strong>工程栈：</strong>大语言模型 + 对话状态机（如 LangGraph），流式输出降低等待感。</li>
-  </ul>
+  </div>
 </div>
 
-<div v-click class="slide-card p-5 rounded-xl border border-indigo-200 bg-gradient-to-b from-indigo-50/80 to-white shadow-md">
-  <h3 class="text-base font-bold text-indigo-900 mb-2 pb-2 border-b border-indigo-200">第二层：计分与对齐</h3>
-  <ul class="space-y-2 text-slate-700 leading-snug">
-    <li><strong>语义对齐：</strong>将「好几天」「几乎每天」等自然语言稳定映射到临床 <strong>0–3</strong> 分档。</li>
-    <li><strong>主动澄清：</strong>回答模糊时追问，直至可落到合法分值或明确弃权。</li>
-    <li><strong>结构化输出：</strong>函数调用 / 工具调用抽取分值，Schema 校验（如 Pydantic）防止越界。</li>
-  </ul>
-</div>
+<div class="disc-card">
+  <div class="disc-tag">Challenge 3</div>
+  <div class="disc-title accent">Stable JSON Output Reliability</div>
+  <div class="disc-body">
 
-<div v-click class="slide-card p-5 rounded-xl border border-violet-200 bg-gradient-to-b from-violet-50/80 to-white shadow-md">
-  <h3 class="text-base font-bold text-violet-900 mb-2 pb-2 border-b border-violet-200">第三层：报告与交付</h3>
-  <ul class="space-y-2 text-slate-700 leading-snug">
-    <li><strong>临床分流：</strong>按 GAD-7 总分（0–21）划分严重度区间，匹配相应建议话术。</li>
-    <li><strong>行动建议：</strong>自助策略、随访或转介提示可按机构资源库配置。</li>
-    <li><strong>安全交付：</strong>API 汇总结果；可对接工作台或加密导出的 PDF（依部署环境而定）。</li>
-  </ul>
+  **Problem**: baseline GLM-5 occasionally produced malformed JSON, missing fields, or leaked JSON into user-visible replies.
+
+  **Resolution**:
+  - parse-layer cleanup strips markdown fences before JSON decoding
+  - schema validation with default backfilling (`score=null`) for missing fields
+  - LoRA tuning significantly improved valid-JSON rate
+
+  </div>
 </div>
 
 </div>
 
 ---
 layout: default
-class: px-12
+class: future-team-page
 ---
 
-# 训练数据构建
+# Future Work <span class="muted">/ & Team</span>
 
-<p class="text-slate-600 mb-4 text-sm leading-relaxed">监督微调需要「用户自然语言表述 ↔ GAD-7 合规分值」成对样本。我们采用 <strong>生成 + 人工标注</strong> 两阶段：先扩大表述多样性，再用标注一致性筛选高质量子集。每条标注同时记录 <strong>分值（0–3）</strong> 与 <strong>置信度</strong>，用于训练与分析歧义。</p>
+<div class="ft-grid">
 
-<div class="grid grid-cols-2 gap-6 mt-2">
+<div class="ft-block">
+<div class="block-title accent">Next Steps</div>
 
-<div v-click class="slide-card p-5 rounded-xl border-l-4 border-amber-500 bg-amber-50/60 shadow-sm">
-  <h4 class="text-base font-bold text-amber-950 mb-3">阶段一：模型生成候选表述</h4>
-  <ul class="text-slate-800 space-y-2 text-sm leading-relaxed">
-    <li>按 7 个 GAD-7 题项分别生成多种口语化回答（不同强度与措辞）。</li>
-    <li>规模示例：约 <strong>700</strong> 条候选（7 题 × 每题约 100 条），覆盖各分档以利类别平衡。</li>
-    <li>输出为纯文本答复，进入人工打标环节。</li>
-  </ul>
-</div>
-
-<div v-click class="slide-card p-5 rounded-xl border-l-4 border-amber-500 bg-amber-50/60 shadow-sm">
-  <h4 class="text-base font-bold text-amber-950 mb-3">阶段二：人工标注与质控</h4>
-  <ul class="text-slate-800 space-y-2 text-sm leading-relaxed">
-    <li>多人独立标注：每条样本标注 <strong>GAD-7 单项分值（0–3）</strong> + <strong>置信度</strong>（如高 / 中 / 低）。</li>
-    <li>质量控制：经一致性审核与质控流程筛选后，合格样本纳入训练集。</li>
-    <li>质控后有效样本约 <strong>650–680</strong> 条，用于微调与评测分析。</li>
-  </ul>
-</div>
+- **Plug in in-house inference service** with `model_id` routing while keeping upper-layer APIs unchanged
+- **Extend to more scales**: PHQ-9 (depression), PSS-10 (stress) with shared scoring engine
+- **Automate offline evaluation** for every LoRA checkpoint via DeepEval
+- **Add dedicated safety classifier** for crisis-intent escalation handling
+- **Introduce long-dialogue compression** to control token costs
 
 </div>
 
-<p v-click class="mt-4 text-xs text-slate-500 leading-relaxed">说明：<strong>严重度</strong>由 0–3 分值体现；<strong>置信度</strong>反映标注员对该句应属分档的把握，可用于难例挖掘或与模型不确定度对照。</p>
+<div class="ft-block">
+<div class="block-title accent">Team & Responsibilities</div>
 
----
-layout: default
-class: px-12
----
+| Role | Member | Responsibility |
+|---|---|---|
+| Model / LoRA | _TBD_ | data prep, LoRA training, DeepEval |
+| Backend / Orchestration | _TBD_ | FastAPI, state machine, provider adapter |
+| Frontend / UI | _TBD_ | React, SSE streaming, Linear-style UX |
+| Data Annotation | _TBD_ | in-house labeling and confidence review |
+| Deployment / Ops | _TBD_ | SeetaCloud deployment, HTTPS domain |
 
-# 示例
+<div class="team-note">Please share final names after rehearsal and I will replace all _TBD_ entries.</div>
 
-<p class="text-slate-500 text-sm mb-4">约 30 秒：用户例如回答「好几天」→ 映射为分值 1 → 七题完成后给出总分与简要建议。</p>
+</div>
 
-<div v-click class="p-6 rounded-xl bg-slate-50 border border-slate-200 text-base max-w-4xl">
-  <p><span class="font-bold text-slate-700">AI：</span>「过去两周里，您有多少时间感到紧张、焦虑或急切？」</p>
-  <p class="mt-3"><span class="font-bold text-blue-700">用户：</span>「好几天。」</p>
-  <p class="mt-3 text-slate-600">→ 该题得分 <strong>1</strong>；重复七题后得到 <strong>GAD-7 总分</strong>及与严重度相关的建议。</p>
 </div>
 
 ---
-layout: end
-class: text-center thank-you-slide
+layout: cover
+class: end-page
 ---
 
-<div class="flex flex-col items-center justify-center h-full">
-  <h1 class="text-4xl font-bold mb-4">谢谢！</h1>
-  <p class="text-xl">欢迎提问</p>
+<div class="end-wrap">
+
+<div class="end-title">Thank You · Q&A</div>
+
+<div class="end-meta">
+
+  <div class="meta-row">
+    <span class="meta-label">Demo Site</span>
+    <a class="meta-value" href="https://u878057-9275-7582ea09.bjb2.seetacloud.com:8443/" target="_blank">
+      https://u878057-9275-7582ea09.bjb2.seetacloud.com:8443
+    </a>
+  </div>
+
+  <div class="meta-row">
+    <span class="meta-label">Repository</span>
+    <a class="meta-value" href="https://github.com/A1motoro/aie1902-psychology" target="_blank">
+      github.com/A1motoro/aie1902-psychology
+    </a>
+  </div>
+
+  <div class="meta-row">
+    <span class="meta-label">Course</span>
+    <span class="meta-value">AIE1902 · Psychology Project</span>
+  </div>
+
 </div>
 
-<style>
-.slidev-layout.thank-you-slide { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%) !important; }
-.slidev-layout.thank-you-slide h1,
-.slidev-layout.thank-you-slide p { color: #fff !important; text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
-</style>
+<div class="end-tags">
+  <span class="pill">GLM-5</span>
+  <span class="pill">LoRA</span>
+  <span class="pill">Dual-Agent</span>
+  <span class="pill">DeepEval</span>
+  <span class="pill">SSE</span>
+  <span class="pill">FastAPI</span>
+  <span class="pill">React</span>
+</div>
+
+</div>
