@@ -17,19 +17,19 @@ const siteBase = rawBase.endsWith('/') ? rawBase : `${rawBase}/`
 const decks = [
   {
     id: '1',
-    entry: 'decks/1/slides.md',
+    entry: 'deck-1.md',
     title: 'The 48-Hour Rebellion',
     subtitle: 'Finding Agency in the Age of Algorithms',
   },
   {
     id: '2',
-    entry: 'decks/2/slides.md',
+    entry: 'deck-2.md',
     title: 'The Mark We Leave',
     subtitle: 'Entering the Anthropocene',
   },
   {
     id: '3',
-    entry: 'decks/3/slides.md',
+    entry: 'deck-3.md',
     title: 'Sleep: The Endangered Asset',
     subtitle: 'The Sleep Economy',
   },
@@ -42,14 +42,15 @@ mkdirSync(dist, { recursive: true })
 const slidevBin = join(root, 'node_modules/@slidev/cli/bin/slidev.mjs')
 
 for (const deck of decks) {
-  const outDir = join(dist, deck.id)
+  const outRel = join('dist', deck.id)
+  const outDir = join(root, outRel)
   const base = `${siteBase}${deck.id}/`
   console.log(`\n▶ Building deck ${deck.id}: ${deck.title}`)
-  console.log(`  entry=${deck.entry}  out=${outDir}  base=${base}`)
+  console.log(`  entry=${deck.entry}  out=${outRel}  base=${base}`)
 
   const result = spawnSync(
     process.execPath,
-    [slidevBin, 'build', deck.entry, '--out', outDir, '--base', base],
+    [slidevBin, 'build', deck.entry, '--out', outRel, '--base', base],
     { cwd: root, stdio: 'inherit', env: process.env },
   )
 
