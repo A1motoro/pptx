@@ -3,9 +3,15 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export"
+    "dev": "slidev decks/1/slides.md --open",
+    "dev:1": "slidev decks/1/slides.md --open",
+    "dev:2": "slidev decks/2/slides.md --open",
+    "dev:3": "slidev decks/3/slides.md --open",
+    "build": "node scripts/build-decks.mjs",
+    "build:1": "slidev build decks/1/slides.md --out dist/1 --base /pptx/1/",
+    "build:2": "slidev build decks/2/slides.md --out dist/2 --base /pptx/2/",
+    "build:3": "slidev build decks/3/slides.md --out dist/3 --base /pptx/3/",
+    "export": "slidev export decks/1/slides.md"
   },
   "dependencies": {
     "@slidev/cli": "^52.10.1",
