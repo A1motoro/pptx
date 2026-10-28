@@ -17,7 +17,7 @@ pnpm install
 pnpm dev:1   # or dev:2 / dev:3
 ```
 
-Sources live under `decks/{1,2,3}/slides.md`.
+Sources: `deck-1.md`, `deck-2.md`, `deck-3.md` (project root so shared `public/` and `components/` resolve).
 
 ## Build
 
