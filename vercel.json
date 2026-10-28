@@ -5,6 +5,7 @@
     { "source": "/1/:path*", "destination": "/1/index.html" },
     { "source": "/2/:path*", "destination": "/2/index.html" },
     { "source": "/3/:path*", "destination": "/3/index.html" },
+    { "source": "/4/:path*", "destination": "/4/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

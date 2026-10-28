@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Build decks 1–3 into dist/{1,2,3}/ and write a root switcher at dist/index.html.
- * Base path: BASE_PATH env (default /pptx/) → /pptx/1/, /pptx/2/, /pptx/3/
+ * Build decks into dist/{id}/ and write the options page at dist/index.html (site default).
+ * BASE_PATH env (default /pptx/) → /pptx/ , /pptx/1/ , /pptx/2/ , ...
  */
 import { spawnSync } from 'node:child_process'
 import { mkdirSync, writeFileSync, cpSync, existsSync, rmSync } from 'node:fs'
@@ -17,23 +17,32 @@ const siteBase = rawBase.endsWith('/') ? rawBase : `${rawBase}/`
 const decks = [
   {
     id: '1',
-    entry: 'deck-1.md',
+    entry: 'decks/1/slides.md',
     title: 'The 48-Hour Rebellion',
     subtitle: 'Finding Agency in the Age of Algorithms',
   },
   {
     id: '2',
-    entry: 'deck-2.md',
+    entry: 'decks/2/slides.md',
     title: 'The Mark We Leave',
     subtitle: 'Entering the Anthropocene',
   },
   {
     id: '3',
-    entry: 'deck-3.md',
+    entry: 'decks/3/slides.md',
     title: 'Sleep: The Endangered Asset',
     subtitle: 'The Sleep Economy',
   },
+  {
+    id: '4',
+    entry: 'decks/4/slides.md',
+    title: 'GAD-7 AI-Assisted Assessment',
+    subtitle: 'Conversational anxiety screening · GLM-5 + LoRA',
+  },
 ]
+
+const deckIds = decks.map(d => d.id)
+const deckIdPattern = `^[${deckIds.join('')}]$`
 
 if (existsSync(dist))
   rmSync(dist, { recursive: true, force: true })
@@ -42,33 +51,34 @@ mkdirSync(dist, { recursive: true })
 const slidevBin = join(root, 'node_modules/@slidev/cli/bin/slidev.mjs')
 
 for (const deck of decks) {
-  const outRel = join('dist', deck.id)
-  const outDir = join(root, outRel)
+  // Slidev resolves --out relative to entry dirname (decks/N), so use an absolute path.
+  const outDir = join(dist, deck.id)
   const base = `${siteBase}${deck.id}/`
   console.log(`\n▶ Building deck ${deck.id}: ${deck.title}`)
-  console.log(`  entry=${deck.entry}  out=${outRel}  base=${base}`)
+  console.log(`  entry=${deck.entry}  out=${outDir}  base=${base}`)
 
   const result = spawnSync(
     process.execPath,
-    [slidevBin, 'build', deck.entry, '--out', outRel, '--base', base],
+    [slidevBin, 'build', deck.entry, '--out', outDir, '--base', base],
     { cwd: root, stdio: 'inherit', env: process.env },
   )
 
   if (result.status !== 0)
     process.exit(result.status ?? 1)
 
-  // SPA fallback for GitHub Pages deep links inside each deck
   const indexHtml = join(outDir, 'index.html')
   if (existsSync(indexHtml))
     cpSync(indexHtml, join(outDir, '404.html'))
 }
 
+const pathList = deckIds.map(id => `<code>${siteBase}${id}/</code>`).join(', ')
+
 const switcher = `<!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Presentations · pptx</title>
+  <title>选项 · Presentations</title>
   <style>
     :root {
       --bg: #0f1419;
@@ -149,13 +159,13 @@ const switcher = `<!DOCTYPE html>
     }
   </style>
   <script>
-    // Allow /?deck=1 or /#1 → redirect into that deck
+    // Optional deep-link: ?deck=1 or #1 → that deck. Bare / stays on this options page.
     (function () {
       var params = new URLSearchParams(location.search);
       var q = params.get('deck') || params.get('n');
       var hash = (location.hash || '').replace(/^#/, '');
-      var id = q || (/^[123]$/.test(hash) ? hash : '');
-      if (/^[123]$/.test(id)) {
+      var id = q || (new RegExp(${JSON.stringify(deckIdPattern)}).test(hash) ? hash : '');
+      if (new RegExp(${JSON.stringify(deckIdPattern)}).test(id)) {
         location.replace(${JSON.stringify(siteBase)} + id + '/');
       }
     })();
@@ -163,12 +173,10 @@ const switcher = `<!DOCTYPE html>
 </head>
 <body>
   <main>
-    <h1>English presentations</h1>
+    <h1>选项</h1>
     <p class="lead">
-      Open deck by URL: <code>${siteBase}1/</code>,
-      <code>${siteBase}2/</code>,
-      <code>${siteBase}3/</code>
-      · or <code>?deck=1</code>
+      默认进入本页。打开具体幻灯片：${pathList}
+      · 或 <code>?deck=1</code>
     </p>
     <ol>
       ${decks.map(d => `
@@ -183,15 +191,14 @@ const switcher = `<!DOCTYPE html>
         </a>
       </li>`).join('')}
     </ol>
-    <footer>base ${siteBase}</footer>
+    <footer>${siteBase}</footer>
   </main>
 </body>
 </html>
 `
 
 writeFileSync(join(dist, 'index.html'), switcher)
-// Help GitHub Pages recover unknown root paths back to the switcher
 writeFileSync(join(dist, '404.html'), switcher)
 
-console.log(`\n✓ Wrote switcher → ${join(dist, 'index.html')}`)
-console.log(`✓ Decks ready under ${siteBase}{1,2,3}/`)
+console.log(`\n✓ Options page → ${join(dist, 'index.html')} (site default)`)
+console.log(`✓ Decks → ${siteBase}{${deckIds.join(',')}}/`)
